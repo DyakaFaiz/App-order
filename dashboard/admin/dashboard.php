@@ -71,7 +71,7 @@ $kasir = mysqli_fetch_assoc($jumlahkasir);
 					<div class="col-md-10">
 						<div class="ml-5 card-body">
 							<h6 class="card-title">Total Menu : </h6>
-							<a href="index.php?makanan">
+							<a href="index.php?dtCoffee">
 								<span class="btn btn-warning text-white btn-sm text-small"><?= $makanan['makanan'] ?> menu</span>
 							</a>
 						</div>

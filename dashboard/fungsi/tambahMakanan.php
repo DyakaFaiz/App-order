@@ -14,10 +14,10 @@ $tmp = $_FILES['foto']['tmp_name'];
 $fotobaru = date('dmYHis') . $foto;
 
 // cek jika foto berhasil diupload
-if ($kategori == 'Dessert') {
-	$src = "../assets/image/Dessert/$fotobaru";
-} elseif ($kategori == 'Coffee') {
+if ($kategori == 'Coffee') {
 	$src = "../assets/image/Coffee/$fotobaru";
+} elseif ($kategori == 'Dessert') {
+	$src = "../assets/image/Dessert/$fotobaru";
 } else {
 	$src = "../assets/image/NoCoffee/$fotobaru";
 }

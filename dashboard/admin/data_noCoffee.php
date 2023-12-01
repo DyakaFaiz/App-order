@@ -17,11 +17,11 @@
 </div>
 
 <div class="container shadow b-r-navbar">
-    <?php if (isset($_SESSION['pesan'])) : ?>
-        <?= $_SESSION['pesan'] ?>
-    <?php unset($_SESSION['pesan']);
-    endif; ?>
     <div class="row p-3">
+        <?php if (isset($_SESSION['pesan'])) : ?>
+            <?= $_SESSION['pesan'] ?>
+        <?php unset($_SESSION['pesan']);
+        endif; ?>
         <div class="container-title text-center">
             <h4 class="mb-2 fs-20">Non Coffee</h4>
         </div>
@@ -34,7 +34,7 @@
                 while ($data = mysqli_fetch_array($sql)) :
                 ?>
                     <div class="col-lg-2 mb-1">
-                        <div class="card shadow p-3 mb-2 bg-white">
+                        <div class="card shadow p-2 mb-2 bg-white">
                             <img class="card-img-top shadow mb-4 bg-white rounded" height="125" src="assets/image/noCoffee/<?= $data['foto'] ?>" alt="Card image cap">
                             <div class="card-body">
                                 <div class="mb-1">
@@ -80,7 +80,9 @@
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <img src="assets/image/NoCoffee/<?= $data['foto'] ?>" alt="" class="card-img-top">
+                                                <div class="col-md-12">
+                                                    <img src="assets/image/NoCoffee/<?= $data['foto'] ?>" alt="" class="card-img-top shadow p-2">
+                                                </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">
