@@ -10,7 +10,6 @@
 						<div class="form-group">
 							<label class="form-label" for="kategori_masakan">Kategori Masakan</label>
 							<select name="kategori_masakan" id="kategori_masakan" class="form-control">
-								<option value="Pilih Kategori" disabled>Pilih Kategori</option>
 								<option value="Coffee">Coffee</option>
 								<option value="NoCoffee">No Coffee</option>
 								<option value="Dessert">Dessert</option>
