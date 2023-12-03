@@ -29,7 +29,7 @@
       <div class="row p-1">
         <!-- mengambil data dari database -->
         <?php
-        $query = "SELECT * FROM tb_masakan WHERE kategori_masakan='Coffee' ORDER BY id_masakan LIMIT 4";
+        $query = "SELECT * FROM tb_masakan WHERE kategori_masakan='Coffee' ORDER BY id_masakan LIMIT 6";
         $sql = mysqli_query($kon, $query);
         while ($data = mysqli_fetch_array($sql)) :
         ?>

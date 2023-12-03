@@ -5,7 +5,7 @@
 	endif; ?>
 	<div class="card">
 		<div class="card-header font-weight-bold">
-			Dessert
+			No Coffee
 		</div>
 		<div class="card-body shadow">
 			<a href="index.php?dtCoffee"><button class="btn btn-primary btn-sm mb-3">Data Coffee</button></a>
@@ -27,13 +27,13 @@
 					<!-- mengambil data dari database -->
 					<?php
 					$i = 1;
-					$sql = mysqli_query($kon, "SELECT * FROM tb_masakan WHERE kategori_masakan='Dessert'");
+					$sql = mysqli_query($kon, "SELECT * FROM tb_masakan WHERE kategori_masakan='NoCoffee'");
 					while ($data = mysqli_fetch_array($sql)) : ?>
 						<tr>
 							<td><?= $i++; ?></td>
 							<td style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></td>
 							<td><?= $data['harga_masakan'] ?></td>
-							<td><img src="assets/image/dessert/<?= $data['foto'] ?>" alt="makanan" height="100" class="shadow rounded"></td>
+							<td><img src="assets/image/NoCoffee/<?= $data['foto'] ?>" alt="makanan" height="100" class="shadow rounded"></td>
 							<?php
 							if ($data['status_masakan'] == 1) {
 								$status = "Tersedia";

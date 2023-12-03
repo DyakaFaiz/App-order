@@ -16,10 +16,10 @@ $fotobaru = date('dmYHis') . $foto;
 // cek jika foto berhasil diupload
 if ($kategori == 'Coffee') {
 	$src = "../assets/image/Coffee/$fotobaru";
+} elseif ($kategori == 'NoCoffee') {
+	$src = "../assets/image/NoCoffee/$fotobaru";
 } elseif ($kategori == 'Dessert') {
 	$src = "../assets/image/Dessert/$fotobaru";
-} else {
-	$src = "../assets/image/NoCoffee/$fotobaru";
 }
 
 if (move_uploaded_file($tmp, "$src")) {
@@ -69,7 +69,7 @@ if (move_uploaded_file($tmp, "$src")) {
 				</div>
 			';
 			header('location:../index.php?dtNoCoffee');
-		} else {
+		} elseif ($kategori == "Dessert") {
 			$_SESSION['pesan'] = '
 				<div class="alert alert-danger mb-2 alert-dismissible text-small " role="alert">
 					<b>Gagal!</b> Data gagal ditambahkan
@@ -96,7 +96,7 @@ if (move_uploaded_file($tmp, "$src")) {
 			</div>
 		';
 		header('location:../index.php?dtNoCoffee');
-	} else {
+	} elseif ($kategori == "Dessert") {
 		$_SESSION['pesan'] = '
 				<div class="alert alert-danger mb-2 alert-dismissible text-small " role="alert">
 					<b>Gagal!</b> Foto gagal ditambahkan
