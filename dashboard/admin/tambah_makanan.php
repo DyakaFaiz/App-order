@@ -1,9 +1,9 @@
 <div class="container mt-3">
-	<div class="row">
-		<div class="col-lg-6">
-			<div class="card">
+	<div class="row flex-c">
+		<div class="col-lg-8">
+			<div class="card shadow">
 				<div class="card-header">
-					<strong>Tambah Makanan</strong>
+					<strong>Tambah Menu</strong>
 				</div>
 				<div class="card-body">
 					<form action="fungsi/tambahMakanan.php" method="post" enctype="multipart/form-data">
@@ -37,8 +37,10 @@
 								<input type="file" class="custom-file-input" id="foto" name="foto" required>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
-						<button type="button" class="btn btn-danger" onclick="history.back()">Kembali</button>
+						<div class="flex-r">
+							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="button" class="btn btn-danger" onclick="history.back()">Kembali</button>
+						</div>
 					</form>
 				</div>
 			</div>
