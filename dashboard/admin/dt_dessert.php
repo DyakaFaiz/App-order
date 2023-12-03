@@ -31,7 +31,7 @@
                     while ($data = mysqli_fetch_array($sql)) : ?>
                         <tr>
                             <td><?= $i++; ?></td>
-                            <td><?= $data['nama_masakan'] ?></td>
+                            <td style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></td>
                             <td><?= $data['harga_masakan'] ?></td>
                             <td><img src="assets/image/dessert/<?= $data['foto'] ?>" alt="makanan" height="100" class="shadow rounded"></td>
                             <?php

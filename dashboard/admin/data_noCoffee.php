@@ -29,13 +29,13 @@
             <div class="row p-1">
                 <!-- mengambil data dari database -->
                 <?php
-                $query = "SELECT * FROM tb_masakan WHERE kategori_masakan='noCoffee' ORDER BY id_masakan LIMIT 7";
+                $query = "SELECT * FROM tb_masakan WHERE kategori_masakan='noCoffee' ORDER BY id_masakan LIMIT 6";
                 $sql = mysqli_query($kon, $query);
                 while ($data = mysqli_fetch_array($sql)) :
                 ?>
                     <div class="col-lg-2 mb-1">
                         <div class="card shadow p-2 mb-2 bg-white">
-                            <img class="card-img-top shadow mb-4 bg-white rounded" height="125" src="assets/image/noCoffee/<?= $data['foto'] ?>" alt="Card image cap">
+                            <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/noCoffee/<?= $data['foto'] ?>" alt="Card image cap">
                             <div class="card-body">
                                 <div class="mb-1">
 
@@ -46,7 +46,7 @@
                                     <?php endif; ?>
 
                                 </div>
-                                <h4 class="card-title fs-16"><?= $data['nama_masakan'] ?></h4>
+                                <h4 class="card-title fs-14" style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></h4>
                                 <?php
                                 $harga = $data['harga_masakan'];
                                 if ($_SESSION['level'] == "") {

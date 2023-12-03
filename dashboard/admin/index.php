@@ -35,7 +35,7 @@
         ?>
           <div class="col-lg-2 mb-1">
             <div class="card shadow p-2 mb-2 bg-white">
-              <img class="card-img-top shadow mb-4 bg-white rounded" height="125" src="assets/image/coffee/<?= $data['foto'] ?>" alt="Card image cap">
+              <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/coffee/<?= $data['foto'] ?>" alt="Card image cap">
               <div class="card-body">
                 <div class="mb-1">
 
@@ -46,7 +46,7 @@
                   <?php endif; ?>
 
                 </div>
-                <h4 class="card-title fs-16"><?= $data['nama_masakan'] ?></h4>
+                <h4 class="card-title fs-16" style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></h4>
                 <?php
                 $harga = $data['harga_masakan'];
                 if ($_SESSION['level'] == "") {

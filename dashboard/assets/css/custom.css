@@ -35,6 +35,9 @@ body {
   background-color: #d9d9d9cc;
 }
 
+.t-c {
+  text-transform: capitalize;
+}
 .puter {
   background-color: #d9d9d9cc;
 }

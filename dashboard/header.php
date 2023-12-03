@@ -83,12 +83,10 @@ include 'fungsi/rupiah.php';
               <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
 
             <?php elseif ($level == "Kasir") : ?>
-              <div class="text-black">
-                <a class="nav-link nav-item ml-3 <?= $home, $htm ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-link nav-item <?= $us, $htm ?>" href="index.php?user">Data User</a>
-                <a class="nav-link nav-item <?= $tran, $htm ?>" href="index.php?transaksi">Input Transaksi <span class="sr-only">(current)</span></a>
-                <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
-              </div>
+              <a class="nav-link nav-item ml-3 <?= $home, $htm ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link nav-item <?= $us, $htm ?>" href="index.php?user">Data User</a>
+              <a class="nav-link nav-item <?= $tran, $htm ?>" href="index.php?transaksi">Input Transaksi <span class="sr-only">(current)</span></a>
+              <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
 
             <?php elseif ($level == "Owner") : ?>
               <a class="nav-link nav-item ml-3 <?= $dash, $htm ?>" href="index.php?dashboard">Dashboard <span class="sr-only">(current)</span></a>
