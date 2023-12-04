@@ -35,10 +35,10 @@ include 'fungsi/rupiah.php';
   $htm = 'text-dark';
   ?>
   <div class="container">
-    <nav class="navbar navbar-expand-lg b-r-navbar p-2" style="background-color: <?= $color ?>;">
+    <nav class="navbar navbar-expand-md b-r-navbar p-2" style="background-color: <?= $color ?>;">
       <img src="assets/image/logo.jpg" class="wrap-pic-cir pter" alt="" width="60" height="60" class="mb-1">
       <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler flex-r" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 

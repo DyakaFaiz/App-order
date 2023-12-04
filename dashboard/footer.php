@@ -1,13 +1,15 @@
 <?php if ($level == "" || $level == "Pelanggan") : ?>
-    <div class="puter container border mt-4 p-3 b-r-navbar shadow">
+    <div class="puter container flex-c-sm border mt-4 p-3 b-r-navbar shadow">
         <footer class="align-items-center">
-            <div class="row">
-                <div class="col-lg-7 ml-5">
+            <div class="row mx-auto">
+                <div class="col-lg-7">
                     <h5 class="text-body-secondary mb-3">TakeIt! Dessert Cafe</h5>
                     <p class="text-body-secondary">Started with the simple vision of building a space to share beautiful and delicious desserts.We want our visitors to come and experience unique flavors from around the world, in a setting that is not only welcoming but one you would want to revisit time and time again.</p>
                 </div>
-                <div class="col-md-4 ml-5">
-                    <h5 class="mb-0 text-body-secondary mb-3">Contact Us:</h5>
+                <div class="col ml-sm-5">
+                    <div class="text-footer-head">
+                        <h5 class="text-body-secondary mb-3">Contact Us:</h5>
+                    </div>
                     <div class="text-footer ml-2">
                         <p>+62 1234 5678 90</p>
                         <p>TakeIt!DessertCafe@gmail.com</p>

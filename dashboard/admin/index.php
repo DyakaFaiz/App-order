@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="/dashboard/assets/css/custom.css">
 <link rel="stylesheet" href="/auth/css/util.css">
 <div class="container mt-3">
-  <div class="col-md-12">
+  <div class="col-lg-12">
     <div class="row text-center align-items-center">
-      <div class="col-lg-4 mb-3 flex-r">
+      <div class="col-4 mb-3 flex-r">
         <a href="#" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi aktip">COFFEE</a>
       </div>
-      <div class="col-lg-4 mb-3 flex-c">
+      <div class="col-4 mb-3 flex-c">
         <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
       </div>
-      <div class="col-lg-4 mb-3 flex-l">
+      <div class="col-4 mb-3 flex-l">
         <a href="index.php?dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">Dessert</a>
       </div>
     </div>
@@ -33,7 +33,7 @@
         $sql = mysqli_query($kon, $query);
         while ($data = mysqli_fetch_array($sql)) :
         ?>
-          <div class="col-lg-2 mb-1">
+          <div class="col-md-2 mb-1">
             <div class="card shadow p-2 mb-2 bg-white">
               <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/coffee/<?= $data['foto'] ?>" alt="Card image cap">
               <div class="card-body">
@@ -68,7 +68,7 @@
 
           <!-- Modal -->
           <div class="modal fade" id="masakan_<?= $data['id_masakan']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog modal-md" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Tambah ke Keranjang</h5>
