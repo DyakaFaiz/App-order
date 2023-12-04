@@ -33,7 +33,7 @@
         $sql = mysqli_query($kon, $query);
         while ($data = mysqli_fetch_array($sql)) :
         ?>
-          <div class="col-md-2 mb-1">
+          <div class="col-lg-2 mb-1">
             <div class="card shadow p-2 mb-2 bg-white">
               <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/coffee/<?= $data['foto'] ?>" alt="Card image cap">
               <div class="card-body">
@@ -79,10 +79,10 @@
                 <form action="fungsi/orderMakanan.php" method="POST">
                   <div class="modal-body">
                     <div class="row">
-                      <div class="col-md-6 flex-c">
+                      <div class="col-md-7 flex-c">
                         <img src="assets/image/COffee/<?= $data['foto'] ?>" alt="" style="" class="card-img-top shadow p-2 img-thumbnail">
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-5">
                         <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">
                         <div class="form-group">
                           <label>Menu</label>
