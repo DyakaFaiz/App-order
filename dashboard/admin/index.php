@@ -68,7 +68,7 @@
 
           <!-- Modal -->
           <div class="modal fade" id="masakan_<?= $data['id_masakan']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Tambah ke Keranjang</h5>
@@ -80,7 +80,7 @@
                   <div class="modal-body">
                     <div class="row">
                       <div class="col-md-6 flex-c">
-                        <img src="assets/image/COffee/<?= $data['foto'] ?>" alt="" class="card-img-top shadow p-2 img-thumbnail">
+                        <img src="assets/image/COffee/<?= $data['foto'] ?>" alt="" style="" class="card-img-top shadow p-2 img-thumbnail">
                       </div>
                       <div class="col-md-6">
                         <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">
