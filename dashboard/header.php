@@ -37,122 +37,126 @@ include 'fungsi/rupiah.php';
   <div class="container">
     <nav class="navbar navbar-expand-md b-r-navbar p-2" style="background-color: <?= $color ?>;">
       <img src="assets/image/logo.jpg" class="wrap-pic-cir pter" alt="" width="60" height="60" class="mb-1">
-      <div class="container">
-        <button class="navbar-toggler flex-r" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="col-9">
+        <div class="row">
+          <div class="container">
+            <button class="navbar-toggler flex-r" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <?php
-            if (isset($_GET['home'])) {
-              $home = "active";
-            } elseif (isset($_GET['dashboard'])) {
-              $dash = "active";
-            } elseif (isset($_GET['laporan'])) {
-              $lap = "active";
-            } elseif (isset($_GET['order'])) {
-              $or = "active";
-            } elseif (isset($_GET['user'])) {
-              $us = "active";
-            } elseif (isset($_GET['makanan'])) {
-              $m = "active";
-            } elseif (isset($_GET['minuman'])) {
-              $m = "active";
-            } elseif (isset($_GET['transaksi'])) {
-              $tran = "active";
-            } else {
-              $home = "active";
-            }
-            ?>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <?php
+                if (isset($_GET['home'])) {
+                  $home = "active";
+                } elseif (isset($_GET['dashboard'])) {
+                  $dash = "active";
+                } elseif (isset($_GET['laporan'])) {
+                  $lap = "active";
+                } elseif (isset($_GET['order'])) {
+                  $or = "active";
+                } elseif (isset($_GET['user'])) {
+                  $us = "active";
+                } elseif (isset($_GET['makanan'])) {
+                  $m = "active";
+                } elseif (isset($_GET['minuman'])) {
+                  $m = "active";
+                } elseif (isset($_GET['transaksi'])) {
+                  $tran = "active";
+                } else {
+                  $home = "active";
+                }
+                ?>
 
-            <?php if ($level == "Admin") : ?>
+                <?php if ($level == "Admin") : ?>
 
-              <a class="nav-link nav-item ml-3 <?= $dash, $htm ?>" href="index.php?dashboard">Dashboard <span class="sr-only">(current)</span></a>
-              <a class="nav-link nav-item <?= $m, $htm ?>" href="index.php?dtCoffee">Menu</a>
-              <a class="nav-link nav-item <?= $us, $htm ?>" href="index.php?user">Data User</a>
-              <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
-
-
-            <?php elseif ($level == "Waiter") : ?>
-              <a class="nav-link nav-item ml-3 <?= $home, $htm ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
-              <a class="nav-link nav-item <?= $us, $htm ?>" href="index.php?user">Data User</a>
-              <a class="nav-link nav-item <?= $or, $htm ?>" href="index.php?order">Input Order <span class="sr-only">(current)</span></a>
-              <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
-
-            <?php elseif ($level == "Kasir") : ?>
-              <a class="nav-link nav-item ml-3 <?= $home, $htm ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
-              <a class="nav-link nav-item <?= $us, $htm ?>" href="index.php?user">Data User</a>
-              <a class="nav-link nav-item <?= $tran, $htm ?>" href="index.php?transaksi">Input Transaksi <span class="sr-only">(current)</span></a>
-              <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
-
-            <?php elseif ($level == "Owner") : ?>
-              <a class="nav-link nav-item ml-3 <?= $dash, $htm ?>" href="index.php?dashboard">Dashboard <span class="sr-only">(current)</span></a>
-              <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
-
-            <?php elseif ($level == "Pelanggan" || $level == "") : ?>
-              <a class="nav-link ml-3 fs-6 <?= $home ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
-
-            <?php endif; ?>
+                  <a class="nav-link nav-item ml-3 <?= $dash, $htm ?>" href="index.php?dashboard">Dashboard <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item <?= $m, $htm ?>" href="index.php?dtCoffee">Menu</a>
+                  <a class="nav-link nav-item <?= $us, $htm ?>" href="index.php?user">Data User</a>
+                  <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
 
 
+                <?php elseif ($level == "Waiter") : ?>
+                  <a class="nav-link nav-item ml-3 <?= $home, $htm ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item <?= $us, $htm ?>" href="index.php?user">Data User</a>
+                  <a class="nav-link nav-item <?= $or, $htm ?>" href="index.php?order">Input Order <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
+
+                <?php elseif ($level == "Kasir") : ?>
+                  <a class="nav-link nav-item ml-3 <?= $home, $htm ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item <?= $us, $htm ?>" href="index.php?user">Data User</a>
+                  <a class="nav-link nav-item <?= $tran, $htm ?>" href="index.php?transaksi">Input Transaksi <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
+
+                <?php elseif ($level == "Owner") : ?>
+                  <a class="nav-link nav-item ml-3 <?= $dash, $htm ?>" href="index.php?dashboard">Dashboard <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
+
+                <?php elseif ($level == "Pelanggan" || $level == "") : ?>
+                  <a class="nav-link ml-3 fs-6 text-center <?= $home ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
+
+                <?php endif; ?>
 
 
-          </ul>
-          <ul class="navbar-nav ml-auto">
-            <?php if ($_SESSION['level'] == "") : ?>
-              <a href="../auth/index.php" class="nav-item p-2 fs-16 text-decoration-none b-r-navbar w-100 mr-2 text-white abu " style="background-color: #b94d05;">Login</a>
-            <?php else : ?>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle <?= $htm ?>" data-toggle="dropdown" role="button"><i class="fa fa-user mr-1"></i><?= $_SESSION['level'] ?><span class="mr-1"></span></a>
-                <div class="dropdown-menu">
-                  <span class="dropdown-item"><?= $_SESSION['nama_user'] ?></span>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="../auth/logout.php"><button class="btn text-white" style="background-color: #b94d05;">Logout</button></a>
-                </div>
-              </li>
-            <?php endif; ?>
-            <?php if ($_SESSION['level'] != "Owner") : ?>
-              <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-xl">
-                  <i class="fa fa-shopping-cart mr-1 hov-pointer mr-3"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col">
-                        <table class="table table-striped table-hovered">
-                          <thead>
-                            <tr>
-                              <th>No</th>
-                              <th>Nama Makanan</th>
-                              <th>Foto</th>
-                              <th>Jumlah</th>
-                              <th>Harga</th>
-                              <th>total</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>1</td>
-                              <td>Ayam</td>
-                              <td><img src="assets/image/makanan/27022020052639bakar.jpg" alt="makanan" height="50"></td>
-                              <td><input class="form-control" id="txt1" onkeyup="sum();"></td>
-                              <td><input class="form-control-plaintext" id="txt2" onkeyup="sum();" value="1000" readonly></td>
-                              <td><input class="form-control-plaintext" id="txt3" readonly></td>
-                            </tr>
-                          </tbody>
-                        </table>
 
-                      </div>
+
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <?php if ($_SESSION['level'] == "") : ?>
+                  <a href="../auth/index.php" class="nav-item p-2 fs-16 text-decoration-none b-r-navbar w-100 mr-2 text-white abu text-center" style="background-color: #b94d05;">Login</a>
+                <?php else : ?>
+                  <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle <?= $htm ?>" data-toggle="dropdown" role="button"><i class="fa fa-user mr-1"></i><?= $_SESSION['level'] ?><span class="mr-1"></span></a>
+                    <div class="dropdown-menu">
+                      <span class="dropdown-item"><?= $_SESSION['nama_user'] ?></span>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="../auth/logout.php"><button class="btn text-white" style="background-color: #b94d05;">Logout</button></a>
                     </div>
-                  </div>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href=""><button class="btn btn-warning">Keranjang</button></a>
-                </div>
-              </li>
-            <?php endif ?>
-          </ul>
+                  </li>
+                <?php endif; ?>
+                <?php if ($_SESSION['level'] != "Owner") : ?>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link text-center" data-toggle="modal" data-target=".bd-example-modal-xl">
+                      <i class="fa fa-shopping-cart mr-1 hov-pointer mr-3"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <table class="table table-striped table-hovered">
+                              <thead>
+                                <tr>
+                                  <th>No</th>
+                                  <th>Nama Makanan</th>
+                                  <th>Foto</th>
+                                  <th>Jumlah</th>
+                                  <th>Harga</th>
+                                  <th>total</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>1</td>
+                                  <td>Ayam</td>
+                                  <td><img src="assets/image/makanan/27022020052639bakar.jpg" alt="makanan" height="50"></td>
+                                  <td><input class="form-control" id="txt1" onkeyup="sum();"></td>
+                                  <td><input class="form-control-plaintext" id="txt2" onkeyup="sum();" value="1000" readonly></td>
+                                  <td><input class="form-control-plaintext" id="txt3" readonly></td>
+                                </tr>
+                              </tbody>
+                            </table>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href=""><button class="btn btn-warning">Keranjang</button></a>
+                    </div>
+                  </li>
+                <?php endif ?>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </nav>

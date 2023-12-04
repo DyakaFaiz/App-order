@@ -7,7 +7,7 @@
                 <a href="index.php" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi aktip">COFFEE</a>
             </div>
             <div class="col-lg-4 mb-3 flex-c">
-                <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
+                <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi shadow">NO COFFEE</a>
             </div>
             <div class="col-lg-4 mb-3 flex-l">
                 <a href="index.php?dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">Dessert</a>

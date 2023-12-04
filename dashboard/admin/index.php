@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="/dashboard/assets/css/custom.css">
 <link rel="stylesheet" href="/auth/css/util.css">
 <div class="container mt-3">
-  <div class="col-lg-12">
+  <div class="col">
     <div class="row text-center align-items-center">
-      <div class="col-4 mb-3 flex-r">
-        <a href="#" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi aktip">COFFEE</a>
+      <div class="col-sm-4 mb-3 flex-r">
+        <a href="#" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi shadow">COFFEE</a>
       </div>
-      <div class="col-4 mb-3 flex-c">
+      <div class="col-sm-4 mb-3 flex-c">
         <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
       </div>
-      <div class="col-4 mb-3 flex-l">
+      <div class="col-sm-4 mb-3 flex-l">
         <a href="index.php?dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">Dessert</a>
       </div>
     </div>
