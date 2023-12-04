@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2020 at 07:55 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.6
+-- Generation Time: Dec 04, 2023 at 01:16 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,7 +37,7 @@ CREATE TABLE `tb_detail_order` (
   `hartot_dorder` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `status_dorder` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_detail_order`
@@ -45,7 +45,8 @@ CREATE TABLE `tb_detail_order` (
 
 INSERT INTO `tb_detail_order` (`id_dorder`, `check_available`, `id_order`, `id_masakan`, `keterangan_dorder`, `jumlah_dorder`, `hartot_dorder`, `id_user`, `status_dorder`) VALUES
 (64, 1, 'ORD0001', 12, 'pedes', 6, 150000, 8, 0),
-(65, 1, 'ORD0001', 16, '', 1, 9000, 8, 0);
+(65, 1, 'ORD0001', 16, '', 1, 9000, 8, 0),
+(69, 2, 'ORD0002', 31, '', 1, 26000, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -56,7 +57,7 @@ INSERT INTO `tb_detail_order` (`id_dorder`, `check_available`, `id_order`, `id_m
 CREATE TABLE `tb_level` (
   `id_level` int(11) NOT NULL,
   `level` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_level`
@@ -82,29 +83,33 @@ CREATE TABLE `tb_masakan` (
   `harga_masakan` int(128) NOT NULL,
   `foto` varchar(255) NOT NULL,
   `status_masakan` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_masakan`
 --
 
 INSERT INTO `tb_masakan` (`id_masakan`, `kategori_masakan`, `nama_masakan`, `harga_masakan`, `foto`, `status_masakan`) VALUES
-(12, 'Makanan', 'Ayam Geprek', 25000, '27022020052629yuk-buat-ayam-geprek-pedas-cocok-untuk-buka-puasa-bareng-keluarga-z1VHhnEl4n.jpg', 1),
-(13, 'Makanan', 'Ayam Bakar', 30000, '27022020052639bakar.jpg', 1),
-(14, 'Makanan', 'Ayam Betutu', 40000, '27022020052709vetutu.jpg', 0),
-(15, 'Makanan', 'Ayam Goreng', 15000, '27022020052721goreng.png', 1),
-(16, 'Minuman', 'Jus Mangga', 9000, '27022020052834mangga.jpg', 1),
-(17, 'Minuman', 'Jus Alpukat', 10000, '27022020052842alpukat.webp', 0),
-(18, 'Minuman', 'Es Teh ', 5000, '27022020052850esteh.png', 1),
-(19, 'Minuman', 'Teh Panas', 5000, '27022020052903tehpanas.jpg', 1),
-(20, 'Minuman', 'Jus Jeruk', 8000, '27022020052912jus-jeruk.jpg', 1),
-(21, 'Makanan', 'Ayam Penyet', 25000, '27022020052734penyet.jpg', 0),
-(22, 'Makanan', 'Ayam Taliwang', 35000, '29022020063639taliwang.jpg', 1),
-(23, 'Makanan', 'Ayam Teriyaki', 30000, '29022020063702teriyaki.jpg', 0),
-(24, 'Makanan', 'Ayam Rica-Rica', 33000, '29022020063741rica.jpg', 1),
-(25, 'Minuman', 'Jus Jambu', 9000, '29022020064540jambu.jpg', 1),
-(26, 'Minuman', 'Jus Strawberri', 8000, '29022020064611stro.jpg', 1),
-(27, 'Minuman', 'Es Campur', 10000, '08062020122131campur.png', 1);
+(28, 'Dessert', 'Brown Cupcakes', 12000, '30112023014329brown cupcakes.jpg', 1),
+(31, 'Dessert', 'Caramel Puding', 26000, '30112023161621caramel puding.jpg', 1),
+(38, 'NoCoffee', 'sweet Dream ', 21000, '02122023175453sweet dream .jpg', 1),
+(39, 'NoCoffee', 'Strawberry Milkshake', 20000, '02122023211143strawberry milkshake.jpg', 1),
+(40, 'NoCoffee', 'Blue Mojito', 20000, '02122023211207blue mojito.jpg', 1),
+(41, 'NoCoffee', 'Peach Tea', 20000, '02122023211239peach tea.jpg', 1),
+(42, 'NoCoffee', 'Blueberry Mojito', 20000, '02122023211413blueberry mojito.jpg', 1),
+(43, 'NoCoffee', 'caramel ice cream', 20000, '02122023212050caramel ice cream.jpg', 1),
+(44, 'NoCoffee', 'Ice Matcha Latte', 20000, '02122023212116Ice Matcha Latte.jpg', 1),
+(45, 'NoCoffee', 'Sweet Bingsoo', 20000, '02122023212231Sweet Bingsoo.jpg', 1),
+(46, 'Coffee', 'Ice Americano', 20000, '03122023201109ice americano.jpg', 1),
+(47, 'Coffee', 'caramel machiato', 20000, '03122023201600caramel machiato.jpg', 1),
+(48, 'Coffee', 'choco coffee', 20000, '03122023201613choco coffee.jpg', 1),
+(49, 'Coffee', 'Dalgona Coffee', 20000, '03122023201625Dalgona Coffee.jpg', 1),
+(50, 'Coffee', 'espresso', 20000, '03122023201816espresso.jpg', 1),
+(51, 'Coffee', 'Milk Coffee ', 20000, '03122023201831Milk Coffee .jpg', 1),
+(52, 'Dessert', 'Croffle', 20000, '03122023202112Croffle.jpg', 1),
+(53, 'Dessert', 'glaze donuts', 20000, '03122023202128glaze donuts.jpg', 1),
+(54, 'Dessert', 'macarons', 20000, '03122023202143macarons.jpg', 1),
+(55, 'Dessert', 'rasberry choux', 20000, '03122023202202rasberry choux.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -115,7 +120,7 @@ INSERT INTO `tb_masakan` (`id_masakan`, `kategori_masakan`, `nama_masakan`, `har
 CREATE TABLE `tb_meja` (
   `meja_id` int(11) NOT NULL,
   `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_meja`
@@ -147,7 +152,7 @@ CREATE TABLE `tb_order` (
   `id_user` int(11) NOT NULL,
   `keterangan_order` text DEFAULT NULL,
   `status_order` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_order`
@@ -173,7 +178,7 @@ CREATE TABLE `tb_transaksi` (
   `totbar_transaksi` int(11) NOT NULL,
   `uang_transaksi` int(11) NOT NULL,
   `kembalian_transaksi` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_transaksi`
@@ -194,7 +199,7 @@ CREATE TABLE `tb_user` (
   `password` varchar(128) NOT NULL,
   `nama_user` varchar(128) NOT NULL,
   `id_level` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_user`
@@ -202,13 +207,13 @@ CREATE TABLE `tb_user` (
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nama_user`, `id_level`) VALUES
 (1, 'doni', '123', 'Reva Doni Aprilio', 1),
-(2, 'tupik', '123', 'Taufik Hidayat', 2),
 (6, 'andri', '123', 'Andri Priyandi', 3),
 (7, 'pinu', '123', 'M. Finuary Renggalih', 4),
 (8, 'yogas', '123', 'Yogas Destariansyah', 5),
 (9, 'fajri', '123', 'Fajri Hijrian', 5),
 (10, 'rafli', '123', 'Rafli Dwi Apriliant', 5),
-(11, 'aziz', '123', 'Aziz Naufal Bagaskara Setiawan', 3);
+(11, 'aziz', '123', 'Aziz Naufal Bagaskara Setiawan', 3),
+(23, 'tupik', '123', 'Taufik Hidayat', 2);
 
 --
 -- Indexes for dumped tables
@@ -265,7 +270,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_detail_order`
 --
 ALTER TABLE `tb_detail_order`
-  MODIFY `id_dorder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id_dorder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `tb_level`
@@ -277,7 +282,7 @@ ALTER TABLE `tb_level`
 -- AUTO_INCREMENT for table `tb_masakan`
 --
 ALTER TABLE `tb_masakan`
-  MODIFY `id_masakan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_masakan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `tb_meja`
@@ -295,7 +300,7 @@ ALTER TABLE `tb_transaksi`
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

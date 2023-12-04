@@ -81,7 +81,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="col-md-12">
-                                                    <img src="assets/image/NoCoffee/<?= $data['foto'] ?>" alt="" class="card-img-top shadow p-2">
+                                                    <img src="assets/image/NoCoffee/<?= $data['foto'] ?>" alt="" class="card-img-top img-thumbnail shadow p-2">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">

@@ -1,4 +1,4 @@
-<?php  
+<?php
 session_start();
 include '../../koneksi.php';
 
@@ -30,4 +30,3 @@ if ($sql) {
 	';
 	header('location:../index.php?user');
 }
-?>

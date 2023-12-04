@@ -79,10 +79,8 @@
                 <form action="fungsi/orderMakanan.php" method="POST">
                   <div class="modal-body">
                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="col-md-12">
-                          <img src="assets/image/COffee/<?= $data['foto'] ?>" alt="" class="card-img-top shadow p-2">
-                        </div>
+                      <div class="col-md-6 flex-c">
+                        <img src="assets/image/COffee/<?= $data['foto'] ?>" alt="" class="card-img-top shadow p-2 img-thumbnail">
                       </div>
                       <div class="col-md-6">
                         <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">

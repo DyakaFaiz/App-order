@@ -71,9 +71,7 @@ include 'fungsi/rupiah.php';
               <a class="nav-link nav-item ml-3 <?= $dash, $htm ?>" href="index.php?dashboard">Dashboard <span class="sr-only">(current)</span></a>
               <a class="nav-link nav-item <?= $m, $htm ?>" href="index.php?dtCoffee">Menu</a>
               <a class="nav-link nav-item <?= $us, $htm ?>" href="index.php?user">Data User</a>
-              <a class="nav-link nav-item <?= $or, $htm ?>" href="index.php?order">Input Order <span class="sr-only">(current)</span></a>
               <a class="nav-link nav-item <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
-              <a class="nav-link nav-item <?= $tran, $htm ?>" href="index.php?transaksi">Input Transaksi <span class="sr-only">(current)</span></a>
 
 
             <?php elseif ($level == "Waiter") : ?>
