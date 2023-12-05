@@ -4,7 +4,7 @@
     <div class="col">
         <div class="row text-center align-items-center">
             <div class="col-sm-4 mb-3 flex-r">
-                <a href="index.php" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi shadow">COFFEE</a>
+                <a href="index.php?" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi shadow">COFFEE</a>
             </div>
             <div class="col-sm-4 mb-3 flex-c">
                 <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
@@ -29,7 +29,7 @@
             <div class="row p-1 flex-c">
                 <!-- mengambil data dari database -->
                 <?php
-                $query = "SELECT * FROM tb_masakan WHERE kategori_masakan='Coffee' ORDER BY id_masakan LIMIT 5";
+                $query = "SELECT * FROM tb_masakan WHERE kategori_masakan='NoCoffee' ORDER BY id_masakan LIMIT 5";
                 $sql = mysqli_query($kon, $query);
                 while ($data = mysqli_fetch_array($sql)) :
                 ?>

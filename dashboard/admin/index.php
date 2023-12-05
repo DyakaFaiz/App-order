@@ -7,10 +7,10 @@
         <a href="#" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi shadow">COFFEE</a>
       </div>
       <div class="col-sm-4 mb-3 flex-c">
-        <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
+        <a href="index.php?NoCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
       </div>
       <div class="col-sm-4 mb-3 flex-l">
-        <a href="index.php?dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">Dessert</a>
+        <a href="index.php?Dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">Dessert</a>
       </div>
     </div>
   </div>
