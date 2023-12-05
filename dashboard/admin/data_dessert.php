@@ -1,16 +1,16 @@
 <link rel="stylesheet" href="/dashboard/assets/css/custom.css">
 <link rel="stylesheet" href="/auth/css/util.css">
-<div class="container mt-3 transisi">
-    <div class="col-md-12">
+<div class="container mt-3">
+    <div class="col">
         <div class="row text-center align-items-center">
-            <div class="col-lg-4 mb-3 flex-r">
-                <a href="index.php" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi aktip">COFFEE</a>
+            <div class="col-sm-4 mb-3 flex-r">
+                <a href="index.php" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi shadow">COFFEE</a>
             </div>
-            <div class="col-lg-4 mb-3 flex-c">
+            <div class="col-sm-4 mb-3 flex-c">
                 <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
             </div>
-            <div class="col-lg-4 mb-3 flex-l">
-                <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi shadow">Dessert</a>
+            <div class="col-sm-4 mb-3 flex-l">
+                <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">Dessert</a>
             </div>
         </div>
     </div>
@@ -23,19 +23,19 @@
     endif; ?>
     <div class="row p-3">
         <div class="container-title text-center">
-            <h4 class="mb-2 fs-20">Dessert</h4>
+            <h4 class="mb-2 fs-20">Coffee</h4>
         </div>
         <div class="col-md-12">
-            <div class="row p-1">
+            <div class="row p-1 flex-c">
                 <!-- mengambil data dari database -->
                 <?php
-                $query = "SELECT * FROM tb_masakan WHERE kategori_masakan='dessert' ORDER BY id_masakan LIMIT 6";
+                $query = "SELECT * FROM tb_masakan WHERE kategori_masakan='Coffee' ORDER BY id_masakan LIMIT 5";
                 $sql = mysqli_query($kon, $query);
                 while ($data = mysqli_fetch_array($sql)) :
                 ?>
                     <div class="col-lg-2 mb-1">
-                        <div class="card shadow p-2 mb-2 bg-white">
-                            <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/dessert/<?= $data['foto'] ?>" alt="Card image cap">
+                        <div class="shadow p-3 mb-2 bg-white">
+                            <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/coffee/<?= $data['foto'] ?>" alt="Card image cap">
                             <div class="card-body">
                                 <div class="mb-1">
 
@@ -46,7 +46,7 @@
                                     <?php endif; ?>
 
                                 </div>
-                                <h4 class="card-title fs-16" style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></h4>
+                                <h4 class="card-title fs-16 p-2" style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></h4>
                                 <?php
                                 $harga = $data['harga_masakan'];
                                 if ($_SESSION['level'] == "") {
@@ -54,7 +54,7 @@
                                 }
 
                                 ?>
-                                <p class="card-text"><strong>Rp. <?= rupiah($harga) ?></strong></p>
+                                <p class="card-text p-2 fs-14"><strong>Rp. <?= rupiah($harga) ?></strong></p>
                             </div>
                             <?php if ($data['status_masakan'] == 1) : ?>
                                 <button type="button" class="btn btn-sm btn-block text-white" style="background-color: #b94d05;" data-toggle="modal" data-target="#masakan_<?= $data['id_masakan']; ?>">
@@ -68,7 +68,7 @@
 
                     <!-- Modal -->
                     <div class="modal fade" id="masakan_<?= $data['id_masakan']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-md" role="document">
+                        <div class="modal-dialog modal-xs" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Tambah ke Keranjang</h5>
@@ -79,12 +79,10 @@
                                 <form action="fungsi/orderMakanan.php" method="POST">
                                     <div class="modal-body">
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="col-md-12">
-                                                    <img src="assets/image/Dessert/<?= $data['foto'] ?>" alt="" class="card-img-top shadow p-2">
-                                                </div>
+                                            <div class="col-sm-7 flex-c">
+                                                <img src="assets/image/Coffee/<?= $data['foto'] ?>" alt="" style="" class="card-img-top shadow p-2 img-thumbnail">
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-sm-5">
                                                 <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">
                                                 <div class="form-group">
                                                     <label>Menu</label>

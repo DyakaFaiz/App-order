@@ -23,6 +23,7 @@ include 'fungsi/rupiah.php';
   <link rel="stylesheet" href="../dashboard/assets/css/custom.css">
   <link rel="stylesheet" href="assets/fontawesome-pro/css/all.min.css">
   <link rel="stylesheet" href="../auth/css/util.css">
+  <link rel="shortcut icon" type="x-icon" href="/dashboard/assets/image/logo.jpg">
   <!-- <script src="https://kit.fontawesome.com/7ff23e7e04.js" crossorigin="anonymus"></script> -->
   <title>Take It!</title>
 
@@ -37,10 +38,10 @@ include 'fungsi/rupiah.php';
   <div class="container">
     <nav class="navbar navbar-expand-md b-r-navbar p-2" style="background-color: <?= $color ?>;">
       <img src="assets/image/logo.jpg" class="wrap-pic-cir pter" alt="" width="60" height="60" class="mb-1">
-      <div class="col-9">
-        <div class="row">
+      <div class="col text-right">
+        <div class="row flex-r">
           <div class="container">
-            <button class="navbar-toggler flex-r" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -209,7 +210,7 @@ include 'fungsi/rupiah.php';
               <div class="col-md-8">
                 <table class="table table-striped">
                   <thead>
-                    <tr>
+                    <tr class="fs-12">
                       <th>No</th>
                       <th>Nama</th>
                       <th>Keterangan</th>
@@ -239,7 +240,7 @@ include 'fungsi/rupiah.php';
                     <?php endforeach; ?>
                   </tbody>
                   <tfoot>
-                    <tr>
+                    <tr class="fs-12">
                       <td align="right" colspan="5"><strong>Total Harga : </strong></td>
                       <th colspan="2">Rp. <?= rupiah($hartot['hartot']) ?></th>
                     </tr>
