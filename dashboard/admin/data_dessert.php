@@ -4,13 +4,13 @@
     <div class="col">
         <div class="row text-center align-items-center">
             <div class="col-sm-4 mb-3 flex-r">
-                <a href="index.php" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi shadow">COFFEE</a>
+                <a href="index.php?" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi">COFFEE</a>
             </div>
             <div class="col-sm-4 mb-3 flex-c">
                 <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
             </div>
             <div class="col-sm-4 mb-3 flex-l">
-                <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">Dessert</a>
+                <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi shadow">Dessert</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
     endif; ?>
     <div class="row p-3">
         <div class="container-title text-center">
-            <h4 class="mb-2 fs-20">Coffee</h4>
+            <h4 class="mb-2 fs-20">Dessert</h4>
         </div>
         <div class="col-md-12">
             <div class="row p-1 flex-c">
@@ -35,7 +35,7 @@
                 ?>
                     <div class="col-lg-2 mb-1">
                         <div class="shadow p-3 mb-2 bg-white">
-                            <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/coffee/<?= $data['foto'] ?>" alt="Card image cap">
+                            <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/Dessert/<?= $data['foto'] ?>" alt="Card image cap">
                             <div class="card-body">
                                 <div class="mb-1">
 
@@ -80,7 +80,7 @@
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-sm-7 flex-c">
-                                                <img src="assets/image/Coffee/<?= $data['foto'] ?>" alt="" style="" class="card-img-top shadow p-2 img-thumbnail">
+                                                <img src="assets/image/Dessert/<?= $data['foto'] ?>" alt="" style="" class="card-img-top shadow p-2 img-thumbnail">
                                             </div>
                                             <div class="col-sm-5">
                                                 <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">

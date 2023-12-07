@@ -1,5 +1,10 @@
 <link rel="stylesheet" href="/dashboard/assets/css/custom.css">
 <link rel="stylesheet" href="/auth/css/util.css">
+<style>
+  body {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+</style>
 <div class="container mt-3">
   <div class="col">
     <div class="row text-center align-items-center">
@@ -7,10 +12,10 @@
         <a href="#" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi shadow">COFFEE</a>
       </div>
       <div class="col-sm-4 mb-3 flex-c">
-        <a href="index.php?NoCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
+        <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
       </div>
       <div class="col-sm-4 mb-3 flex-l">
-        <a href="index.php?Dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">Dessert</a>
+        <a href="index.php?dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">Dessert</a>
       </div>
     </div>
   </div>
@@ -35,7 +40,7 @@
         ?>
           <div class="col-lg-2 mb-1">
             <div class="shadow p-3 mb-2 bg-white rounded">
-              <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/coffee/<?= $data['foto'] ?>" alt="Card image cap">
+              <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/Coffee/<?= $data['foto'] ?>" alt="Card image cap">
               <div class="card-body">
                 <div class="mb-1">
 
@@ -70,8 +75,8 @@
           <div class="modal fade" id="masakan_<?= $data['id_masakan']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xs" role="document">
               <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Tambah ke Keranjang</h5>
+                <div class="modal-header oren">
+                  <h5 class="modal-title text-white" id="exampleModalLabel">Tambah ke Keranjang</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -104,8 +109,8 @@
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary">Tambah</button>
+                    <button type="button" class="btn" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn">Tambah</button>
                   </div>
                 </form>
               </div>

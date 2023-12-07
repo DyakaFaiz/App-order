@@ -46,6 +46,10 @@ body {
   box-shadow: 1px 1px 8px grey;
 }
 
+.text-brown {
+  color: #b94d05;
+}
+
 .pter {
   cursor: pointer;
   transition: 0.1s ease-in-out;

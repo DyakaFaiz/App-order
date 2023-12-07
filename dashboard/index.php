@@ -25,7 +25,7 @@ if (isset($_GET['registrasi'])) {
 } elseif (isset($_GET['laporan'])) {
 	include 'admin/laporan.php';
 } elseif (isset($_GET['coffee'])) {
-	include 'admin/coffee.php';
+	include 'admin/index.php';
 } elseif (isset($_GET['noCoffee'])) {
 	include 'admin/data_noCoffee.php';
 } elseif (isset($_GET['dessert'])) {
