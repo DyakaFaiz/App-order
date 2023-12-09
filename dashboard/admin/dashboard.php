@@ -9,10 +9,8 @@ $belumbayar = mysqli_query($kon, "SELECT COUNT(*) AS belum_bayar FROM tb_order W
 $belum = mysqli_fetch_assoc($belumbayar);
 $jumlahmakanan = mysqli_query($kon, "SELECT COUNT(*) AS makanan FROM tb_masakan ");
 $makanan = mysqli_fetch_assoc($jumlahmakanan);
-$jumlahpelanggan = mysqli_query($kon, "SELECT COUNT(*) AS pelanggan FROM tb_user WHERE id_level='5' ");
+$jumlahpelanggan = mysqli_query($kon, "SELECT COUNT(*) AS pelanggan FROM tb_user WHERE id_level='4' ");
 $pelanggan = mysqli_fetch_assoc($jumlahpelanggan);
-$jumlahwaiter = mysqli_query($kon, "SELECT COUNT(*) AS waiter FROM tb_user WHERE id_level='2' ");
-$waiter = mysqli_fetch_assoc($jumlahwaiter);
 $jumlahkasir = mysqli_query($kon, "SELECT COUNT(*) AS kasir FROM tb_user WHERE id_level='3' ");
 $kasir = mysqli_fetch_assoc($jumlahkasir);
 
@@ -88,7 +86,6 @@ $kasir = mysqli_fetch_assoc($jumlahkasir);
 					<div class="col-md-10">
 						<div class="ml-4 card-body">
 							<h6 class="card-title">Total Pegawai :</h6>
-							<span class="btn btn-primary btn-sm text-small"><?= $waiter['waiter'] ?> Waiter</span>
 							<span class="btn btn-secondary btn-sm text-small"><?= $kasir['kasir'] ?> Kasir</span>
 						</div>
 					</div>

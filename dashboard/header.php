@@ -23,7 +23,7 @@ include 'fungsi/rupiah.php';
   <link rel="stylesheet" href="../dashboard/assets/css/custom.css">
   <link rel="stylesheet" href="assets/fontawesome-pro/css/all.min.css">
   <link rel="stylesheet" href="../auth/css/util.css">
-  <link rel="icon" type="image/jpg" href="/dashboard/assets/image/logo.jpg" />
+  <link rel="icon" type="image/jpg" href="/dashboard/assets/image/logoIcon.jpg" style="border-radius: 50%;" />
   <!-- <script src="https://kit.fontawesome.com/7ff23e7e04.js" crossorigin="anonymus"></script> -->
   <title>Take It!</title>
 
@@ -87,11 +87,8 @@ include 'fungsi/rupiah.php';
                   <a class="nav-link nav-item p-2 <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
 
                 <?php elseif ($level == "Pelanggan" || $level == "") : ?>
-                  <a class="nav-link ml-3 fs-15 text-center p-2 <?= $home ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link ml-3 fs-15 text-center p-2 shadow <?= $home ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
                 <?php endif; ?>
-
-
-
 
               </ul>
               <ul class="navbar-nav">

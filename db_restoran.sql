@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 01:16 PM
+-- Generation Time: Dec 09, 2023 at 01:09 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -101,7 +101,7 @@ INSERT INTO `tb_masakan` (`id_masakan`, `kategori_masakan`, `nama_masakan`, `har
 (44, 'NoCoffee', 'Ice Matcha Latte', 20000, '02122023212116Ice Matcha Latte.jpg', 1),
 (45, 'NoCoffee', 'Sweet Bingsoo', 20000, '02122023212231Sweet Bingsoo.jpg', 1),
 (46, 'Coffee', 'Ice Americano', 20000, '03122023201109ice americano.jpg', 1),
-(47, 'Coffee', 'caramel machiato', 20000, '03122023201600caramel machiato.jpg', 1),
+(47, 'Coffee', 'caramel machiato', 20000, '03122023201600caramel machiato.jpg', 0),
 (48, 'Coffee', 'choco coffee', 20000, '03122023201613choco coffee.jpg', 1),
 (49, 'Coffee', 'Dalgona Coffee', 20000, '03122023201625Dalgona Coffee.jpg', 1),
 (50, 'Coffee', 'espresso', 20000, '03122023201816espresso.jpg', 1),
@@ -207,13 +207,9 @@ CREATE TABLE `tb_user` (
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nama_user`, `id_level`) VALUES
 (1, 'doni', '123', 'Reva Doni Aprilio', 1),
-(6, 'andri', '123', 'Andri Priyandi', 3),
 (7, 'pinu', '123', 'M. Finuary Renggalih', 4),
-(8, 'yogas', '123', 'Yogas Destariansyah', 5),
-(9, 'fajri', '123', 'Fajri Hijrian', 5),
-(10, 'rafli', '123', 'Rafli Dwi Apriliant', 5),
-(11, 'aziz', '123', 'Aziz Naufal Bagaskara Setiawan', 3),
-(23, 'tupik', '123', 'Taufik Hidayat', 2);
+(25, 'anna', '123', 'Nabila', 3),
+(26, 'Faiz', '123', 'Dyaka Faiz', 2);
 
 --
 -- Indexes for dumped tables
@@ -270,7 +266,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_detail_order`
 --
 ALTER TABLE `tb_detail_order`
-  MODIFY `id_dorder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id_dorder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `tb_level`
@@ -300,7 +296,7 @@ ALTER TABLE `tb_transaksi`
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

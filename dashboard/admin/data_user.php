@@ -35,16 +35,15 @@
 							<td><?= $data['password'] ?></td>
 							<?php
 							if ($data['id_level'] == 1) {
-								$level = "Admin";
+								$level = "Owner";
 							} elseif ($data['id_level'] == 2) {
-								$level = "Waiter";
+								$level = "Admin";
 							} elseif ($data['id_level'] == 3) {
 								$level = "Kasir";
 							} elseif ($data['id_level'] == 4) {
-								$level = "Owner";
-							} else {
 								$level = "Pelanggan";
 							}
+
 							?>
 							<td><?= $level; ?></td>
 							<?php if ($_SESSION['level'] == "Admin") : ?>
