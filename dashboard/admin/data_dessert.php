@@ -34,7 +34,7 @@
                 while ($data = mysqli_fetch_array($sql)) :
                 ?>
                     <div class="col-lg-2 mb-1">
-                        <div class="shadow p-3 mb-2 bg-white">
+                        <div class="shadow p-3 mb-2 bg-white rounded">
                             <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/Dessert/<?= $data['foto'] ?>" alt="Card image cap">
                             <div class="card-body">
                                 <div class="mb-1">

@@ -27,6 +27,9 @@ body {
   overflow: hidden;
 }
 
+.b-r-card {
+  border-radius: 50%;
+}
 .oren {
   background-color: #b94d05;
 }
@@ -46,8 +49,21 @@ body {
   box-shadow: 1px 1px 8px grey;
 }
 
-.text-brown {
+.nav-link {
+  border-radius: 24px;
+  transition: all ease-in-out 0.1s;
+}
+
+.nav-link:hover {
+  box-shadow: 1px 1px 1px 2px grey;
+}
+
+.btn-brown {
   color: #b94d05;
+}
+
+.btn-brown:hover {
+  box-shadow: 1px 1px 1px 1px grey;
 }
 
 .pter {

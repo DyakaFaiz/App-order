@@ -70,7 +70,7 @@
                     $query_hartot = mysqli_query($kon, "SELECT sum(hartot_dorder) as hartot FROM tb_detail_order WHERE id_order = '$detRow[id_order]'");
                     $hartot = mysqli_fetch_assoc($query_hartot);
                     ?>
-                    <table class="table table-striped">
+                    <table class="table table-striped table-responsive-lg">
                         <thead>
                             <tr>
                                 <th>No</th>

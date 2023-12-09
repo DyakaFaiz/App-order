@@ -12,7 +12,7 @@
 			<a href="index.php?dtNoCoffee"><button class="btn btn-primary btn-sm mb-3">Data No Coffee</button></a>
 			<a href="index.php?dtDessert"><button class="btn btn-primary btn-sm mb-3">Data Dessert</button></a>
 			<a href="index.php?tambah_makanan"><button class="btn btn-success btn-sm mb-3 float-right">Tambah Data</button></a>
-			<table class="table table-hover" id="tabel">
+			<table class="table table-hover table-responsive-lg" id="tabel">
 				<thead>
 					<tr>
 						<th>No</th>

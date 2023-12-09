@@ -6655,6 +6655,10 @@
   color: black;
 }
 
+.text-gray {
+  color: gray;
+}
+
 .text-hov-white:hover {
   color: white;
 }

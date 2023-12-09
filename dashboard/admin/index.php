@@ -1,10 +1,6 @@
 <link rel="stylesheet" href="/dashboard/assets/css/custom.css">
 <link rel="stylesheet" href="/auth/css/util.css">
-<style>
-  body {
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-</style>
+
 <div class="container mt-3">
   <div class="col">
     <div class="row text-center align-items-center">
@@ -38,7 +34,7 @@
         $sql = mysqli_query($kon, $query);
         while ($data = mysqli_fetch_array($sql)) :
         ?>
-          <div class="col-lg-2 mb-1">
+          <div class="col-lg-2 mb-1 ">
             <div class="shadow p-3 mb-2 bg-white rounded">
               <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/Coffee/<?= $data['foto'] ?>" alt="Card image cap">
               <div class="card-body">
@@ -77,7 +73,7 @@
               <div class="modal-content">
                 <div class="modal-header oren">
                   <h5 class="modal-title text-white" id="exampleModalLabel">Tambah ke Keranjang</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
@@ -109,8 +105,8 @@
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn">Tambah</button>
+                    <button type="button" class="btn btn-brown border fs-14" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-brown border fs-14">Tambah</button>
                   </div>
                 </form>
               </div>

@@ -29,7 +29,7 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
                             <p>Keterangan : <?= $order['keterangan_order'] ?></p>
                         </div>
                     <?php endif ?>
-                    <table class="table table-hover" id="tabel">
+                    <table class="table table-hover table-responsive-lg" id="tabel">
                         <thead>
                             <tr>
                                 <th>No</th>

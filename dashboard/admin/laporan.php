@@ -9,7 +9,7 @@
         </div>
         <div class="card-body shadow">
             <a href="admin/semua_laporan.php" target="_blank" class="btn btn-primary btn-sm mb-3">Print semua laporan <i class="fa fa-print"></i></a>
-            <table class="table table-bordered table-hover table-striped" id="tabel">
+            <table class="table table-bordered table-hover table-striped table-responsive-lg" id="tabel">
                 <thead>
                     <tr>
                         <th>No</th>

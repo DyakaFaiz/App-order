@@ -9,7 +9,7 @@
 		</div>
 		<div class="card-body shadow p-3 bg-white rounded">
 			<a href="index.php?registrasi"><button class="btn btn-primary btn-sm mb-3">Registrasi User</button></a>
-			<table class="table" id="tabel">
+			<table class="table table-responsive-lg" id="tabel">
 				<thead>
 					<tr>
 						<th>No</th>
