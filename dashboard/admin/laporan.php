@@ -5,21 +5,21 @@
     endif; ?>
     <div class="card">
         <div class="card-header font-weight-bold">
-            LAPORAN
+            REPORT
         </div>
         <div class="card-body shadow">
-            <a href="admin/semua_laporan.php" target="_blank" class="btn btn-primary btn-sm mb-3">Print semua laporan <i class="fa fa-print"></i></a>
-            <table class="table table-bordered table-hover table-striped table-responsive-lg" id="tabel">
+            <a href="admin/semua_laporan.php" target="_blank" class="btn btn-primary btn-sm mb-3">Print All Reports <i class="fa fa-print"></i></a>
+            <table class="table table-bordered table-hover table-striped table-responsive-lg fs-12" id="tabel">
                 <thead>
                     <tr>
                         <th>No</th>
                         <th>No Order</th>
-                        <th>No Meja</th>
-                        <th>Pelanggan</th>
-                        <th>Tanggal Transaksi</th>
-                        <th>Total Bayar</th>
-                        <th>Diskon</th>
-                        <th>Total Bayar (Diskon)</th>
+                        <th>No Table</th>
+                        <th>Costumer</th>
+                        <th>Transaction Date</th>
+                        <th>Total Payment</th>
+                        <th>Discount</th>
+                        <th>Total Payment (Discount)</th>
                         <th>Option</th>
                     </tr>
                 </thead>

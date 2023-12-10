@@ -66,7 +66,7 @@ if (isset($_SESSION['level'])) {
 
 					<div class="wrap-input100">
 						<input class="input100" type="text" name="username" required>
-						<span class="focus-input100" data-placeholder="username"></span>
+						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
 					<div class="wrap-input100">
@@ -75,6 +75,12 @@ if (isset($_SESSION['level'])) {
 						</span>
 						<input class="input100" type="password" name="password" required>
 						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="text-center">
+						<span>
+							<a href="../dashboard/index.php">as a guest</a>
+						</span>
 					</div>
 
 					<div class="container-login100-form-btn">

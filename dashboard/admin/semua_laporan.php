@@ -15,7 +15,7 @@ $laporan = mysqli_query($kon, "SELECT * FROM tb_transaksi ORDER BY id_transaksi 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <title>Print Laporan</title>
+  <title>Print Report</title>
 </head>
 
 <body>
@@ -23,9 +23,9 @@ $laporan = mysqli_query($kon, "SELECT * FROM tb_transaksi ORDER BY id_transaksi 
     <div class="row">
       <div class="col-md-10 mx-auto mt-5">
         <div class="text-center">
-          <h3>Laporan Transaksi Penjualan</h3>
+          <h3>Sales Transaction Report</h3>
           <h5>TakeIt!</h5>
-          <p>WA : 089676244639 | Email : aprilio842@gmail.com</p>
+          <p>WA : +62 1234 5678 90 | Email : TakeIt!DessertCafe@gmail.com</p>
         </div>
         <div class="card">
           <div class="card-body">
@@ -34,11 +34,11 @@ $laporan = mysqli_query($kon, "SELECT * FROM tb_transaksi ORDER BY id_transaksi 
                 <tr>
                   <th>No</th>
                   <th>Id Order</th>
-                  <th>Pelanggan</th>
-                  <th>Tanggal Transaksi</th>
+                  <th>Customer</th>
+                  <th>Date Of Transaction</th>
                   <th>Total</th>
-                  <th>Diskon</th>
-                  <th>Total (Diskon)</th>
+                  <th>Discount</th>
+                  <th>Total (Discount)</th>
                 </tr>
               </thead>
               <tbody>

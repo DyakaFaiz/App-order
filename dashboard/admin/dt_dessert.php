@@ -8,19 +8,23 @@
             Dessert
         </div>
         <div class="card-body shadow">
-            <a href="index.php?dtCoffee"><button class="btn btn-primary btn-sm mb-3">Data Coffee</button></a>
-            <a href="index.php?dtNoCoffee"><button class="btn btn-primary btn-sm mb-3">Data No Coffee</button></a>
-            <a href="#"><button class="btn btn-primary btn-sm mb-3">Data Dessert</button></a>
-            <a href="index.php?tambah_makanan"><button class="btn btn-success btn-sm mb-3 float-right">Tambah Data</button></a>
+            <a href="index.php?dtCoffee"><button class="btn btn-primary btn-sm mb-3">Coffee Data</button></a>
+            <a href="index.php?dtNoCoffee"><button class="btn btn-primary btn-sm mb-3">Drink Data</button></a>
+            <a href="#"><button class="btn btn-primary btn-sm mb-3">Dessert Data</button></a>
+            <a href="index.php?tambah_makanan"><button class="btn btn-success btn-sm mb-3 float-right">Add Menu</button></a>
             <table class="table table-bordered table-hover table-responsive-lg" id="tabel">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Dessert</th>
-                        <th>Harga</th>
-                        <th>Foto</th>
+                        <th>Dessert Name</th>
+                        <th>Price</th>
+                        <th>Photo</th>
                         <th>Status</th>
-                        <th>Aksi</th>
+                        <?php
+                        $level = $_SESSION['level'];
+                        if ($level == 'Admin') : ?>
+                            <th>Action</th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,18 +40,20 @@
                             <td><img src="assets/image/dessert/<?= $data['foto'] ?>" alt="makanan" height="100" class="shadow rounded"></td>
                             <?php
                             if ($data['status_masakan'] == 1) {
-                                $status = "Tersedia";
+                                $status = "Available";
                             } else {
-                                $status = "Tidak Tersedia";
+                                $status = "Not Available";
                             }
                             ?>
                             <td><?= $status; ?></td>
-                            <td>
-                                <div class="btn-group">
-                                    <a href="index.php?ubah_makanan=<?= $data['id_masakan'] ?>" class="btn btn-sm btn-warning rounded">Ubah</a>
-                                    <a href="fungsi/hapusMakanan.php?id_masakan=<?= $data['id_masakan']; ?>" class="btn btn-danger btn-sm ml-2 rounded">Hapus</a>
-                                </div>
-                            </td>
+                            <?php if ($level == "Admin") : ?>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="index.php?ubah_makanan=<?= $data['id_masakan'] ?>" class="btn btn-sm btn-warning rounded">Edit</a>
+                                        <a href="fungsi/hapusMakanan.php?id_masakan=<?= $data['id_masakan']; ?>" class="btn btn-danger btn-sm ml-2 rounded">Delete</a>
+                                    </div>
+                                </td>
+                            <?php endif; ?>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>

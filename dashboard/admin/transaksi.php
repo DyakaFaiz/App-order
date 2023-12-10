@@ -23,20 +23,20 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
                 <div class="col-md-8">
                     <?php if (isset($_GET['meja'])) : ?>
                         <div class="det">
-                            <p>No order : <?= $order['id_order'] ?></p>
-                            <p>No Meja : <?= $order['meja_order'] ?></p>
-                            <p>Tanggal Pesan : <?= date('d-m-Y', $order['tanggal_order']) ?></p>
-                            <p>Keterangan : <?= $order['keterangan_order'] ?></p>
+                            <p>No Order : <?= $order['id_order'] ?></p>
+                            <p>No Table : <?= $order['meja_order'] ?></p>
+                            <p>Date Order : <?= date('d-m-Y', $order['tanggal_order']) ?></p>
+                            <p>Notes : <?= $order['keterangan_order'] ?></p>
                         </div>
                     <?php endif ?>
                     <table class="table table-hover table-responsive-lg" id="tabel">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Pesanan</th>
-                                <th>Jumlah</th>
-                                <th>Harga</th>
-                                <th>Harga Total</th>
+                                <th>Order Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total Price</th>
                             </tr>
                         </thead>
                         <?php if (isset($_GET['meja'])) : ?>
@@ -66,7 +66,7 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
                             <label for="">No Meja</label>
 
                             <select class="form-control" onchange='location=this.value' required>
-                                <option selected disabled>-- Nomor Meja --</option>
+                                <option selected disabled>-- No Table --</option>
 
                                 <?php if (isset($_GET['meja'])) : ?>
                                     <?php foreach ($kursi as $kurs) : ?>
@@ -90,7 +90,7 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="">Total Harga</label>
+                            <label for="">Total</label>
                             <?php
                             if (isset($_GET['meja'])) {
                                 $q_hartot = mysqli_query($kon, "SELECT sum(hartot_dorder) as hartot FROM tb_detail_order WHERE id_order = '$order[id_order]'");
@@ -107,27 +107,27 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
                             <input type="hidden" name="meja" value="<?= $meja_url ?>">
                             <input type="hidden" name="id_order" value="<?= $id_order ?>">
 
-                            <input type="text" name="total_harga" readonly required value="<?= $toto ?>" class="form-control hartot" placeholder="Total Harga">
+                            <input type="text" name="total_harga" readonly required value="<?= $toto ?>" class="form-control hartot" placeholder="Total">
                         </div>
                         <div class="form-group">
-                            <label for="">Diskon (%)</label>
+                            <label for="">Discount (%)</label>
                             <input type="number" class="form-control diskon" min="0" max="100" name="diskon" value="0" placeholder="Diskon ">
                         </div>
                         <div class="form-group">
-                            <label for="">Total Bayar</label>
-                            <input type="number" readonly class="form-control totbayar" required value="<?= $toto ?>" name="total_bayar" placeholder="Total Bayar">
+                            <label for="">Paid Total</label>
+                            <input type="number" readonly class="form-control totbayar" required value="<?= $toto ?>" name="total_bayar" placeholder="Total Paid">
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="number" min="1" class="form-control uang" required name="uang" placeholder="Uang">
+                                    <input type="number" min="1" class="form-control uang" required name="uang" placeholder="Cash">
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="number" readonly class="form-control kembalian" required name="kembalian" placeholder="Kembalian">
+                                    <input type="number" readonly class="form-control kembalian" required name="kembalian" placeholder="Change">
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-block">Bayar</button>
+                        <button class="btn btn-primary btn-block">Pay</button>
                     </form>
                 </div>
             </div>

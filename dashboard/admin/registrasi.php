@@ -3,16 +3,16 @@
 		<?= $_SESSION['pesan'] ?>
 	<?php unset($_SESSION['pesan']);
 	endif; ?>
-	<div class="row">
+	<div class="row flex-c">
 		<div class="col-lg-6">
 			<div class="card">
 				<div class="card-header">
-					<h5><strong>Registrasi Member</strong></h5>
+					<h5><strong>Registration User</strong></h5>
 				</div>
 				<div class="card-body">
 					<form action="fungsi/registrasi_user.php" method="post">
 						<div class="form-group">
-							<label class="form-label" for="nama_user">Nama Lengkap</label>
+							<label class="form-label" for="nama_user">Full Name</label>
 							<input type="text" class="form-control" id="nama_user" name="nama_user">
 						</div>
 						<div class="form-group">
@@ -28,8 +28,8 @@
 							<select name="id_level" id="id_level" class="form-control">
 								<option value="1">Owner</option>
 								<option value="2">Admin</option>
-								<option value="3">Kasir</option>
-								<option value="4">Pelanggan</option>
+								<option value="3">Cashier</option>
+								<option value="4">Customer</option>
 							</select>
 						</div>
 						<button type="submit" class="btn btn-primary">Submit</button>

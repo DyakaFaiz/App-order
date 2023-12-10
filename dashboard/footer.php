@@ -1,4 +1,4 @@
-<?php if ($level == "" || $level == "Pelanggan") : ?>
+<?php if ($level == "" || $level == "Customer") : ?>
     <div class="puter container flex-c-sm border mt-4 p-3 b-r-navbar shadow">
         <footer class="align-items-center">
             <div class="row mx-auto">

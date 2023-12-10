@@ -39,7 +39,7 @@ $hartot = mysqli_fetch_assoc($q_hartot);
         <hr>
         <div class="row mt-3">
           <div class="col-md-6">
-            TANGGAL : <?= date('d-m-Y h:i', $struk['tanggal_transaksi']) ?><br>
+            Date : <?= date('d-m-Y h:i', $struk['tanggal_transaksi']) ?><br>
             NO ORDER : <?= $struk['id_order'] ?>
           </div>
           <div class="col-md-6">
@@ -68,7 +68,7 @@ $hartot = mysqli_fetch_assoc($q_hartot);
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-1"></div>
-          <div class="col-md-4 text-right">Diskon</div>
+          <div class="col-md-4 text-right">Discount</div>
           <div class="col-md-4 text-right"><?= $struk['diskon_transaksi'] ?> %</div>
         </div>
         <div class="row">
@@ -80,20 +80,20 @@ $hartot = mysqli_fetch_assoc($q_hartot);
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-1"></div>
-          <div class="col-md-4 text-right">Tunai</div>
+          <div class="col-md-4 text-right">Cash</div>
           <div class="col-md-4 text-right">Rp. <?= rupiah($struk['uang_transaksi']) ?></div>
         </div>
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-1"></div>
-          <div class="col-md-4 text-right">Kembalian</div>
+          <div class="col-md-4 text-right">Change</div>
           <div class="col-md-4 text-right">Rp. <?= rupiah($struk['kembalian_transaksi']) ?></div>
         </div>
         <hr>
         <div class="row">
           <div class="col text-center">
             <p>
-              Terima Kasih <br> Atas Kunjungan Anda
+              Thank You <br> For Your Visit
             </p>
           </div>
         </div>

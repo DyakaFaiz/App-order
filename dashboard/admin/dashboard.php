@@ -13,6 +13,9 @@ $jumlahpelanggan = mysqli_query($kon, "SELECT COUNT(*) AS pelanggan FROM tb_user
 $pelanggan = mysqli_fetch_assoc($jumlahpelanggan);
 $jumlahkasir = mysqli_query($kon, "SELECT COUNT(*) AS kasir FROM tb_user WHERE id_level='3' ");
 $kasir = mysqli_fetch_assoc($jumlahkasir);
+$jumlahadmin = mysqli_query($kon, "SELECT COUNT(*) AS admin FROM tb_user WHERE id_level='1' ");
+$admin = mysqli_fetch_assoc($jumlahadmin);
+
 
 ?>
 <div class="container mt-5">
@@ -20,7 +23,7 @@ $kasir = mysqli_fetch_assoc($jumlahkasir);
 		<div class="row no-gutters">
 			<div class="col-md-11">
 				<div class="card-body ml-3">
-					<h5 class="card-title">Selamat Datang <?= $_SESSION['level'] ?></h5>
+					<h5 class="card-title">Welcome <?= $_SESSION['level'] ?></h5>
 					<p class="card-text"><?= $_SESSION['nama_user'] ?></p>
 				</div>
 			</div>
@@ -35,9 +38,9 @@ $kasir = mysqli_fetch_assoc($jumlahkasir);
 					</div>
 					<div class="col-md-10">
 						<div class="card-body">
-							<h5 class="card-title">Total Penjualan hari ini : <?= $date ?></h5>
-							<span class="btn btn-success btn-sm text-small"><?= $sudah['sudah_bayar'] ?> Sudah bayar</span>
-							<span class="btn btn-danger btn-sm text-small"><?= $belum['belum_bayar'] ?> Belum bayar</span>
+							<h5 class="card-title">Today's Total Sales : <?= $date ?></h5>
+							<span class="btn btn-success btn-sm text-small"><?= $sudah['sudah_bayar'] ?> Paid</span>
+							<span class="btn btn-danger btn-sm text-small"><?= $belum['belum_bayar'] ?> Not Paid</span>
 						</div>
 					</div>
 				</div>
@@ -51,7 +54,7 @@ $kasir = mysqli_fetch_assoc($jumlahkasir);
 					</div>
 					<div class="col-md-10">
 						<div class="card-body">
-							<h5 class="card-title">Total Pendapatan hari ini : <?= $month; ?></h5>
+							<h5 class="card-title">Today's Total Revenue : <?= $month; ?></h5>
 							<span class="btn btn-success btn-sm text-small">Rp. <?= rupiah($total['totbar']) ?></span>
 						</div>
 					</div>
@@ -70,7 +73,7 @@ $kasir = mysqli_fetch_assoc($jumlahkasir);
 						<div class="ml-5 card-body">
 							<h6 class="card-title">Total Menu : </h6>
 							<a href="index.php?dtCoffee">
-								<span class="btn btn-warning text-white btn-sm text-small"><?= $makanan['makanan'] ?> menu</span>
+								<span class="btn btn-warning text-white btn-sm text-small"><?= $makanan['makanan'] ?> Menu</span>
 							</a>
 						</div>
 					</div>
@@ -85,8 +88,9 @@ $kasir = mysqli_fetch_assoc($jumlahkasir);
 					</div>
 					<div class="col-md-10">
 						<div class="ml-4 card-body">
-							<h6 class="card-title">Total Pegawai :</h6>
-							<span class="btn btn-secondary btn-sm text-small"><?= $kasir['kasir'] ?> Kasir</span>
+							<h6 class="card-title">Total Employee :</h6>
+							<span class="btn btn-secondary btn-sm text-small"><?= $kasir['kasir'] ?> Cashier</span>
+							<span class="btn btn-secondary btn-sm text-small"><?= $admin['admin'] ?> Admin</span>
 						</div>
 					</div>
 				</div>
@@ -100,8 +104,8 @@ $kasir = mysqli_fetch_assoc($jumlahkasir);
 					</div>
 					<div class="col-md-10">
 						<div class="ml-4 card-body">
-							<h6 class="card-title">Total Pelanggan :</h6>
-							<span class="btn btn-secondary btn-sm text-small"><?= $pelanggan['pelanggan'] ?> Pelanggan</span>
+							<h6 class="card-title">Total Customer :</h6>
+							<span class="btn btn-secondary btn-sm text-small"><?= $pelanggan['pelanggan'] ?> Customer</span>
 						</div>
 					</div>
 				</div>
@@ -115,9 +119,9 @@ $kasir = mysqli_fetch_assoc($jumlahkasir);
 					</div>
 					<div class="col-md-10">
 						<div class="ml-4 card-body">
-							<h6 class="card-title">Laporan</h6>
+							<h6 class="card-title">Report</h6>
 							<a href="index.php?laporan">
-								<span class="btn btn-danger btn-sm text-small"><i class="fa fa-eye"></i> Lihat laporan</span>
+								<span class="btn btn-danger btn-sm text-small"><i class="fa fa-eye"></i> View Report</span>
 							</a>
 						</div>
 					</div>

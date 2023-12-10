@@ -5,13 +5,13 @@
   <div class="col">
     <div class="row text-center align-items-center">
       <div class="col-sm-4 mb-3 flex-r">
-        <a href="#" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi shadow">COFFEE</a>
+        <a href="#" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi">COFFEE</a>
       </div>
       <div class="col-sm-4 mb-3 flex-c">
         <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
       </div>
       <div class="col-sm-4 mb-3 flex-l">
-        <a href="index.php?dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">Dessert</a>
+        <a href="index.php?dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">DESSERT</a>
       </div>
     </div>
   </div>
@@ -41,9 +41,9 @@
                 <div class="mb-1">
 
                   <?php if ($data['status_masakan'] == 1) : ?>
-                    <span class="badge badge-success">Tersedia</span>
+                    <span class="badge badge-success">Available</span>
                   <?php else : ?>
-                    <span class="badge badge-danger">Tidak Tersedia</span>
+                    <span class="badge badge-danger">Not Available</span>
                   <?php endif; ?>
 
                 </div>
@@ -59,10 +59,10 @@
               </div>
               <?php if ($data['status_masakan'] == 1) : ?>
                 <button type="button" class="btn btn-sm btn-block text-white" style="background-color: #b94d05;" data-toggle="modal" data-target="#masakan_<?= $data['id_masakan']; ?>">
-                  Beli
+                  Add To Cart
                 </button>
               <?php else : ?>
-                <a href="index.php?tambah=<?= $data['id_masakan'] ?>" class="btn btn-grey btn-sm btn-block disabled">Habis</a>
+                <a href="index.php?tambah=<?= $data['id_masakan'] ?>" class="btn btn-grey btn-sm btn-block disabled">Out Of Stock</a>
               <?php endif; ?>
             </div>
           </div>
@@ -72,7 +72,7 @@
             <div class="modal-dialog modal-xs" role="document">
               <div class="modal-content">
                 <div class="modal-header oren">
-                  <h5 class="modal-title text-white" id="exampleModalLabel">Tambah ke Keranjang</h5>
+                  <h5 class="modal-title text-white" id="exampleModalLabel">Add To Cart</h5>
                   <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -105,8 +105,8 @@
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-brown border fs-14" data-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-brown border fs-14">Tambah</button>
+                    <button type="button" class="btn btn-brown border fs-14" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-brown border fs-14">Add</button>
                   </div>
                 </form>
               </div>

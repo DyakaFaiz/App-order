@@ -10,7 +10,7 @@
                 <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
             </div>
             <div class="col-sm-4 mb-3 flex-l">
-                <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi shadow">Dessert</a>
+                <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi shadow">DESSERT</a>
             </div>
         </div>
     </div>
@@ -33,16 +33,16 @@
                 $sql = mysqli_query($kon, $query);
                 while ($data = mysqli_fetch_array($sql)) :
                 ?>
-                    <div class="col-lg-2 mb-1">
+                    <div class="col-lg-2 mb-1 ">
                         <div class="shadow p-3 mb-2 bg-white rounded">
                             <img class="card-img-top shadow mb-4 bg-white rounded" height="140" src="assets/image/Dessert/<?= $data['foto'] ?>" alt="Card image cap">
                             <div class="card-body">
                                 <div class="mb-1">
 
                                     <?php if ($data['status_masakan'] == 1) : ?>
-                                        <span class="badge badge-success">Tersedia</span>
+                                        <span class="badge badge-success">Available</span>
                                     <?php else : ?>
-                                        <span class="badge badge-danger">Tidak Tersedia</span>
+                                        <span class="badge badge-danger">Not Available</span>
                                     <?php endif; ?>
 
                                 </div>
@@ -58,10 +58,10 @@
                             </div>
                             <?php if ($data['status_masakan'] == 1) : ?>
                                 <button type="button" class="btn btn-sm btn-block text-white" style="background-color: #b94d05;" data-toggle="modal" data-target="#masakan_<?= $data['id_masakan']; ?>">
-                                    Beli
+                                    Add To Cart
                                 </button>
                             <?php else : ?>
-                                <a href="index.php?tambah=<?= $data['id_masakan'] ?>" class="btn btn-grey btn-sm btn-block disabled">Beli</a>
+                                <a href="index.php?tambah=<?= $data['id_masakan'] ?>" class="btn btn-grey btn-sm btn-block disabled">Out Of Stock</a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -70,9 +70,9 @@
                     <div class="modal fade" id="masakan_<?= $data['id_masakan']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-xs" role="document">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Tambah ke Keranjang</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <div class="modal-header oren">
+                                    <h5 class="modal-title text-white" id="exampleModalLabel">Add To Cart</h5>
+                                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
@@ -80,7 +80,7 @@
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-sm-7 flex-c">
-                                                <img src="assets/image/Dessert/<?= $data['foto'] ?>" alt="" style="" class="card-img-top shadow p-2 img-thumbnail">
+                                                <img src="assets/image/Coffee/<?= $data['foto'] ?>" alt="" style="" class="card-img-top shadow p-2 img-thumbnail">
                                             </div>
                                             <div class="col-sm-5">
                                                 <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">
@@ -104,8 +104,8 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-                                        <button type="submit" class="btn btn-primary">Tambah</button>
+                                        <button type="button" class="btn btn-brown border fs-14" data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-brown border fs-14">Add</button>
                                     </div>
                                 </form>
                             </div>

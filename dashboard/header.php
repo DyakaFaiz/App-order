@@ -71,23 +71,23 @@ include 'fungsi/rupiah.php';
 
                 <?php if ($level == "Admin") : ?>
 
-                  <a class="nav-link nav-item p-2 <?= $dash, $htm ?>" href="index.php?dashboard">Dashboard <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item p-2 <?= $dash, $htm ?>" href="index.php?dashboard">Home <span class="sr-only">(current)</span></a>
                   <a class="nav-link nav-item p-2 <?= $m, $htm ?>" href="index.php?dtCoffee">Menu</a>
-                  <a class="nav-link nav-item p-2 <?= $us, $htm ?>" href="index.php?user">Data User</a>
-                  <a class="nav-link nav-item p-2 <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item p-2 <?= $us, $htm ?>" href="index.php?user">User Data</a>
+                  <a class="nav-link nav-item p-2 <?= $lap, $htm ?>" href="index.php?laporan">Report <span class="sr-only">(current)</span></a>
 
-                <?php elseif ($level == "Kasir") : ?>
+                <?php elseif ($level == "Cashier") : ?>
                   <a class="nav-link nav-item p-2 <?= $home, $htm ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
-                  <a class="nav-link nav-item p-2 <?= $us, $htm ?>" href="index.php?user">Data User</a>
-                  <a class="nav-link nav-item p-2 <?= $tran, $htm ?>" href="index.php?transaksi">Input Transaksi <span class="sr-only">(current)</span></a>
-                  <a class="nav-link nav-item p-2 <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item p-2 <?= $us, $htm ?>" href="index.php?user">User Data</a>
+                  <a class="nav-link nav-item p-2 <?= $tran, $htm ?>" href="index.php?transaksi">Input Transaction <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item p-2 <?= $lap, $htm ?>" href="index.php?laporan">Report <span class="sr-only">(current)</span></a>
 
                 <?php elseif ($level == "Owner") : ?>
-                  <a class="nav-link nav-item p-2 <?= $dash, $htm ?>" href="index.php?dashboard">Dashboard <span class="sr-only">(current)</span></a>
-                  <a class="nav-link nav-item p-2 <?= $lap, $htm ?>" href="index.php?laporan">Laporan <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item p-2 <?= $dash, $htm ?>" href="index.php?dashboard">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link nav-item p-2 <?= $lap, $htm ?>" href="index.php?laporan">Report <span class="sr-only">(current)</span></a>
 
-                <?php elseif ($level == "Pelanggan" || $level == "") : ?>
-                  <a class="nav-link ml-3 fs-15 text-center p-2 shadow <?= $home ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
+                <?php elseif ($level == "Customer" || $level == "") : ?>
+                  <a class="nav-link ml-3 fs-15 text-center p-2 <?= $home ?>" href="index.php">Home</a>
                 <?php endif; ?>
 
               </ul>
@@ -97,11 +97,8 @@ include 'fungsi/rupiah.php';
                     <a href="../auth/index.php" class="nav-link text-decoration-none text-white mr-4 p-2" style="background-color: #b94d05;">Login</a>
                   <?php else : ?>
                   <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle <?= $htm ?>" data-toggle="dropdown" role="button"><i class="fa fa-user mr-1"></i><?= $_SESSION['level'] ?><span class="mr-1"></span></a>
-                    <div class="dropdown-menu text-center shadow border-nones">
-                      <span class="dropdown-item mb-2" disabled><?= $_SESSION['nama_user'] ?></span>
-                      <a class="btn btn-danger border" href="../auth/logout.php">Logout</a>
-                    </div>
+                    <a href="#" class="nav-link dropdown-toggle <?= $htm ?>" data-toggle="dropdown" role="button"><i class="fa fa-user mr-2"></i><?= $_SESSION['level'], " - ", $_SESSION['nama_user'] ?><span class="mr-1"></span></a>
+                    <a class="dropdown-menu text-center btn btn-brown" href="../auth/logout.php">Logout</a>
                   </li>
                 <?php endif; ?>
                 <a class="nav-link mr-3 hov-pointer" data-toggle="modal" data-target=".bd-example-modal-xl">
@@ -120,10 +117,10 @@ include 'fungsi/rupiah.php';
 
 
   <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header oren text-white p-4">
-          <h5 class="modal-title">Keranjang</h5>
+          <h5 class="modal-title">Cart</h5>
           <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -143,20 +140,20 @@ include 'fungsi/rupiah.php';
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>Order no</label>
+                  <label>No Order</label>
                   <input type="text" readonly name="id_order" class="form-control" value="ORD000<?= $no_order; ?>">
                 </div>
                 <div class="form-group">
-                  <label for="">No Meja</label>
+                  <label for="">No Table</label>
                   <select name="meja" class="form-control" required>
-                    <option selected value="0">-- Pilih no meja --</option>
+                    <option selected value="0">-- Select Table --</option>
                     <?php foreach ($no_meja as $meja) : ?>
                       <option value="<?= $meja['meja_id'] ?>"><?= $meja['meja_id'] ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
                 <div class="form-group">
-                  <label>Keterangan</label>
+                  <label>Notes</label>
                   <textarea name="keterangan" class="form-control"></textarea>
                 </div>
               </div>
@@ -165,10 +162,10 @@ include 'fungsi/rupiah.php';
                   <thead>
                     <tr class="fs-12">
                       <th>No</th>
-                      <th>Nama</th>
-                      <th>Keterangan</th>
-                      <th>Harga</th>
-                      <th>Jumlah</th>
+                      <th>Name</th>
+                      <th>Notes</th>
+                      <th>Price</th>
+                      <th>Amount</th>
                       <th>Total</th>
                       <th>Option</th>
                     </tr>
@@ -194,7 +191,7 @@ include 'fungsi/rupiah.php';
                   </tbody>
                   <tfoot>
                     <tr class="fs-12">
-                      <td align="right" colspan="5"><strong>Total Harga : </strong></td>
+                      <td align="right" colspan="5"><strong>Total : </strong></td>
                       <th colspan="2">Rp. <?= rupiah($hartot['hartot']) ?></th>
                     </tr>
                   </tfoot>
@@ -203,8 +200,8 @@ include 'fungsi/rupiah.php';
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger text-white" data-dismiss="modal">Batal</button>
-            <button type="submit" class="btn text-white oren">Proses</button>
+            <button type="button" class="btn btn-brown border fs-14" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-brown border fs-14">Process</button>
           </div>
         </form>
       </div>

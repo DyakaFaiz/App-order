@@ -29,12 +29,12 @@ if ($cek > 0) {
 	} elseif ($data['id_level'] == 3) {
 		$_SESSION['nama_user'] = $data['nama_user'];
 		$_SESSION['id_user'] = $data['id_user'];
-		$_SESSION['level'] = "Kasir";
+		$_SESSION['level'] = "Cashier";
 		header("location:../dashboard/index.php?home");
 	} elseif ($data['id_level'] == 4) {
 		$_SESSION['nama_user'] = $data['nama_user'];
 		$_SESSION['id_user'] = $data['id_user'];
-		$_SESSION['level'] = "Pelanggan";
+		$_SESSION['level'] = "Customer";
 		header("location:../dashboard/index.php?home");
 	} else {
 		header("location:index.php?pesan=gagal");
