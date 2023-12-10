@@ -98,7 +98,7 @@ include 'fungsi/rupiah.php';
                   <?php else : ?>
                   <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle <?= $htm ?>" data-toggle="dropdown" role="button"><i class="fa fa-user mr-2"></i><?= $_SESSION['level'], " - ", $_SESSION['nama_user'] ?><span class="mr-1"></span></a>
-                    <a class="dropdown-menu text-center btn btn-brown" href="../auth/logout.php">Logout</a>
+                    <a class="dropdown-menu text-center btn btn-brown mt-1" href="../auth/logout.php">Logout</a>
                   </li>
                 <?php endif; ?>
                 <a class="nav-link mr-3 hov-pointer" data-toggle="modal" data-target=".bd-example-modal-xl">

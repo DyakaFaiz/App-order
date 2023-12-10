@@ -18,7 +18,7 @@ $admin = mysqli_fetch_assoc($jumlahadmin);
 
 
 ?>
-<div class="container mt-5">
+<div class="container mt-5 p-4">
 	<div class="card text-white mb-3 shadow" style="background-color: #b94d05;">
 		<div class="row no-gutters">
 			<div class="col-md-11">
@@ -31,7 +31,7 @@ $admin = mysqli_fetch_assoc($jumlahadmin);
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<div class="card border mb-3 shadow">
+			<div class="card border mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-money-check-alt p-3 mt-2 fa-4x"></i>
@@ -47,7 +47,7 @@ $admin = mysqli_fetch_assoc($jumlahadmin);
 			</div>
 		</div>
 		<div class="col-md-6">
-			<div class="card border mb-3 shadow">
+			<div class="card border mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-money-bill p-3 mt-2 fa-4x"></i>
@@ -64,7 +64,7 @@ $admin = mysqli_fetch_assoc($jumlahadmin);
 	</div>
 	<div class="row">
 		<div class="col-md-3">
-			<div class="card border mb-3 shadow">
+			<div class="card border mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-burger-soda p-3 mt-2 fa-4x"></i>
@@ -81,7 +81,7 @@ $admin = mysqli_fetch_assoc($jumlahadmin);
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="card border mb-3 shadow">
+			<div class="card border mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-book-user p-3 mt-2 fa-4x"></i>
@@ -97,7 +97,7 @@ $admin = mysqli_fetch_assoc($jumlahadmin);
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="card border mb-3 shadow">
+			<div class="card border mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-book-user p-3 mt-2 fa-4x"></i>
@@ -112,7 +112,7 @@ $admin = mysqli_fetch_assoc($jumlahadmin);
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="card border mb-3 shadow">
+			<div class="card border mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-book p-3 mt-2 fa-4x"></i>

@@ -11,7 +11,12 @@
 			<a href="index.php?dtCoffee"><button class="btn btn-primary btn-sm mb-3">Coffee Data</button></a>
 			<a href="#"><button class="btn btn-primary btn-sm mb-3">Drink Data</button></a>
 			<a href="index.php?dtDessert"><button class="btn btn-primary btn-sm mb-3">Dessert Data</button></a>
-			<a href="index.php?tambah_makanan"><button class="btn btn-success btn-sm mb-3 float-right">Add Menu</button></a>
+			<?php
+			$level = $_SESSION['level'];
+			if ($level == "Admin") :
+			?>
+				<a href="index.php?tambah_makanan"><button class="btn btn-success btn-sm mb-3 float-right">Add Menu</button></a>
+			<?php endif; ?>
 			<table class="table table-bordered table-hover table-responsive-lg" id="tabel">
 				<thead>
 					<tr>
@@ -21,7 +26,6 @@
 						<th>Photo</th>
 						<th>Status</th>
 						<?php
-						$level = $_SESSION['level'];
 						if ($level == 'Admin') : ?>
 							<th>Action</th>
 						<?php endif; ?>

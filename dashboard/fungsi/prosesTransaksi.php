@@ -33,7 +33,7 @@ if ($uang < $total_bayar) {
     if ($query > 0) {
         $_SESSION['pesan'] = '
         <div class="alert alert-success mb-2 alert-dismissible text-small " role="alert">
-            <b>Berhasil!</b> Transaksi berhasil <a class="btn btn-sm btn-primary" href="admin/print_struk.php?id_order=' . $id_order . '" target="_blank">Print Struk <i class="fa fa-print"></i></a>
+            <b>Berhasil!</b> Success <a class="btn btn-sm btn-primary" href="admin/print_struk.php?id_order=' . $id_order . '" target="_blank">Print Receipts <i class="fa fa-print"></i></a>
             <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
         </div>
         ';
@@ -41,14 +41,10 @@ if ($uang < $total_bayar) {
     } else {
         $_SESSION['pesan'] = '
         <div class="alert alert-danger mb-2 alert-dismissible text-small " role="alert">
-            <b>Gagal!</b> Transaksi gagal 
+            <b>Gagal!</b> Failed! 
             <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
         </div>
         ';
         header("location:../index.php?transaksi");
     }
 }
-
-?>
-
-

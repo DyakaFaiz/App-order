@@ -80,7 +80,7 @@
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-sm-7 flex-c">
-                                                <img src="assets/image/Coffee/<?= $data['foto'] ?>" alt="" style="" class="card-img-top shadow p-2 img-thumbnail">
+                                                <img src="assets/image/NoCoffee/<?= $data['foto'] ?>" alt="" style="" class="card-img-top shadow p-2 img-thumbnail">
                                             </div>
                                             <div class="col-sm-5">
                                                 <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">

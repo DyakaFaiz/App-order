@@ -127,7 +127,7 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-block">Pay</button>
+                        <button class="btn btn-success btn-block">Pay</button>
                     </form>
                 </div>
             </div>
