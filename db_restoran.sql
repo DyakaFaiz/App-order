@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2023 at 01:09 PM
+-- Generation Time: Dec 11, 2023 at 02:26 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -39,15 +39,6 @@ CREATE TABLE `tb_detail_order` (
   `status_dorder` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `tb_detail_order`
---
-
-INSERT INTO `tb_detail_order` (`id_dorder`, `check_available`, `id_order`, `id_masakan`, `keterangan_dorder`, `jumlah_dorder`, `hartot_dorder`, `id_user`, `status_dorder`) VALUES
-(64, 1, 'ORD0001', 12, 'pedes', 6, 150000, 8, 0),
-(65, 1, 'ORD0001', 16, '', 1, 9000, 8, 0),
-(69, 2, 'ORD0002', 31, '', 1, 26000, 1, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -64,11 +55,10 @@ CREATE TABLE `tb_level` (
 --
 
 INSERT INTO `tb_level` (`id_level`, `level`) VALUES
-(1, 'Administrator'),
-(2, 'Waiter'),
-(3, 'Kasir'),
-(4, 'Owner'),
-(5, 'Pelanggan');
+(1, 'Owner'),
+(2, 'Admin'),
+(3, 'Cashier'),
+(4, 'Customer');
 
 -- --------------------------------------------------------
 
@@ -180,13 +170,6 @@ CREATE TABLE `tb_transaksi` (
   `kembalian_transaksi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `tb_transaksi`
---
-
-INSERT INTO `tb_transaksi` (`id_transaksi`, `id_user`, `id_order`, `tanggal_transaksi`, `aTanggal_transaksi`, `hartot_transaksi`, `diskon_transaksi`, `totbar_transaksi`, `uang_transaksi`, `kembalian_transaksi`) VALUES
-(26, 8, 'ORD0001', 1591074220, '02-06-2020', 159000, 50, 79500, 100000, 20500);
-
 -- --------------------------------------------------------
 
 --
@@ -266,13 +249,13 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_detail_order`
 --
 ALTER TABLE `tb_detail_order`
-  MODIFY `id_dorder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id_dorder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `tb_level`
 --
 ALTER TABLE `tb_level`
-  MODIFY `id_level` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_level` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `tb_masakan`
@@ -290,7 +273,7 @@ ALTER TABLE `tb_meja`
 -- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `tb_user`

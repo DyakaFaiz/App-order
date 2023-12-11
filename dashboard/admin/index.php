@@ -8,7 +8,7 @@
         <a href="#" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi">COFFEE</a>
       </div>
       <div class="col-sm-4 mb-3 flex-c">
-        <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
+        <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi shadow">NO COFFEE</a>
       </div>
       <div class="col-sm-4 mb-3 flex-l">
         <a href="index.php?dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">DESSERT</a>

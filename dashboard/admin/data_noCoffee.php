@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="/dashboard/assets/css/custom.css">
 <link rel="stylesheet" href="/auth/css/util.css">
+
 <div class="container mt-3">
     <div class="col">
         <div class="row text-center align-items-center">
             <div class="col-sm-4 mb-3 flex-r">
-                <a href="index.php?coffee" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi">COFFEE</a>
+                <a href="index.php?" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi">COFFEE</a>
             </div>
             <div class="col-sm-4 mb-3 flex-c">
                 <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi shadow">NO COFFEE</a>
