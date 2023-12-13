@@ -50,10 +50,6 @@
                 <h4 class="card-title fs-16 p-2" style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></h4>
                 <?php
                 $harga = $data['harga_masakan'];
-                if ($_SESSION['level'] == "") {
-                  $harga = $data['harga_masakan'] + 5000;
-                }
-
                 ?>
                 <p class="card-text p-2 fs-14"><strong>Rp. <?= rupiah($harga) ?></strong></p>
               </div>
