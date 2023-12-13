@@ -110,9 +110,14 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
                             <input type="text" name="total_harga" readonly required value="<?= $toto ?>" class="form-control hartot" placeholder="Total">
                         </div>
                         <div class="form-group">
-                            <label for="">Discount (%)</label>
+                            <label>Discount (%)</label>
                             <input type="number" class="form-control diskon" min="0" max="100" name="diskon" value="0" placeholder="Diskon ">
                         </div>
+
+                        <select class="form-select">
+                            <option selected></option>
+                        </select>
+
                         <div class="form-group">
                             <label for="">Paid Total</label>
                             <input type="number" readonly class="form-control totbayar" required value="<?= $toto ?>" name="total_bayar" placeholder="Total Paid">
