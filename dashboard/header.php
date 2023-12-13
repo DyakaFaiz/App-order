@@ -157,6 +157,11 @@ include 'fungsi/rupiah.php';
                   <label>Notes</label>
                   <textarea name="keterangan" class="form-control"></textarea>
                 </div>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Pilih Pembayaran</option>
+                  <option value="1">Cash</option>
+                  <option value="2">QR</option>
+                </select>
               </div>
               <div class="col-md-8">
                 <table class="table table-striped table-responsive-sm">

@@ -16,16 +16,16 @@ if ($data['kategori_masakan'] == "Coffee") {
 }
 ?>
 <div class="container mt-3">
-	<div class="row">
-		<div class="col-lg-6">
+	<div class="row flex-c">
+		<div class="col-lg-7">
 			<div class="card">
 				<div class="card-header">
-					<strong>Ubah <?= $kategori; ?></strong>
+					<strong>Change <?= $kategori; ?></strong>
 				</div>
 				<div class="card-body">
 					<form action="fungsi/ubahMakanan.php?id_masakan=<?= $data['id_masakan'] ?>" method="post" enctype="multipart/form-data">
 						<div class="form-group">
-							<label class="form-label" for="kategori_masakan">Kategori</label>
+							<label class="form-label" for="kategori_masakan">Category</label>
 							<select name="kategori_masakan" id="kategori_masakan" class="form-control">
 								<option value="Coffee" <?= $sc; ?>>Coffee</option>
 								<option value="NoCoffee" <?= $snc; ?>>No Coffee</option>
@@ -33,11 +33,11 @@ if ($data['kategori_masakan'] == "Coffee") {
 							</select>
 						</div>
 						<div class="form-group">
-							<label class="form-label" for="nama_masakan">Nama <?= $kategori; ?></label>
+							<label class="form-label" for="nama_masakan">Name <?= $kategori; ?></label>
 							<input type="text" class="form-control" id="nama_masakan" name="nama_masakan" value="<?= $data['nama_masakan'] ?>">
 						</div>
 						<div class="form-group">
-							<label class="form-label" for="harga_masakan">Harga</label>
+							<label class="form-label" for="harga_masakan">Price</label>
 							<input type="number" class="form-control" id="harga_masakan" name="harga_masakan" min="0" value="<?= $data['harga_masakan'] ?>">
 						</div>
 						<div class="form-group">
@@ -50,8 +50,8 @@ if ($data['kategori_masakan'] == "Coffee") {
 									$tTersedia = "Selected";
 								}
 								?>
-								<option value="1" <?= $tersedia; ?>>Tersedia</option>
-								<option value="0" <?= $tTersedia; ?>>Tidak Tersedia</option>
+								<option value="1" <?= $tersedia; ?>>Available</option>
+								<option value="0" <?= $tTersedia; ?>>Not Available</option>
 							</select>
 						</div>
 						<?php
@@ -65,7 +65,7 @@ if ($data['kategori_masakan'] == "Coffee") {
 						?>
 
 						<div class="form-group">
-							<label class="form-label" for="foto">Foto</label>
+							<label class="form-label" for="foto">Photo</label>
 							<div class="row">
 								<div class="col-md-4">
 									<img src="assets/image/<?= $src; ?>/<?= $data['foto'] ?>" alt="makanan" class="img-thumbnail">
@@ -82,12 +82,12 @@ if ($data['kategori_masakan'] == "Coffee") {
 											<input type="file" class="custom-file-input" id="foto" name="foto">
 										</div>
 									</div>
-									<span class="help-block text-muted">Ceklis jika Anda ingin mengubah foto</span>
+									<span class="help-block text-muted">Check if you want to change the photo</span>
 								</div>
 							</div>
 						</div>
 						<button type="submit" class="btn btn-primary">Submit</button>
-						<button type="button" class="btn btn-danger" onclick="history.back()">Kembali</button>
+						<button type="button" class="btn btn-danger" onclick="history.back()">Back</button>
 					</form>
 				</div>
 			</div>

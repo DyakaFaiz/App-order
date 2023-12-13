@@ -6,17 +6,17 @@ $data = mysqli_fetch_array($sql);
 
 $sql2 = mysqli_query($kon, "SELECT * FROM tb_level");
 ?>
-<div class="container mt-3">
-	<div class="row">
+<div class="container mt-4">
+	<div class="row flex-c">
 		<div class="col-lg-6">
-			<div class="card">
-				<div class="card-header">
-					<strong>Ubah User</strong>
+			<div class="shadow p-5 rounded">
+				<div class="card-header mb-3 text-center fs-20">
+					<strong>Update User</strong>
 				</div>
-				<div class="card-body">
+				<div class="card-body p-4">
 					<form action="fungsi/ubahUser.php?id_user=<?= $data['id_user'] ?>" method="post" enctype="multipart/form-data">
 						<div class="form-group">
-							<label class="form-label" for="nama_user">Nama User</label>
+							<label class="form-label" for="nama_user">Full Name</label>
 							<input type="text" class="form-control" id="nama_user" name="nama_user" value="<?= $data['nama_user'] ?>">
 						</div>
 						<div class="form-group">
@@ -37,8 +37,14 @@ $sql2 = mysqli_query($kon, "SELECT * FROM tb_level");
 								<?php endforeach ?>
 							</select>
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
-						<button type="button" class="btn btn-danger" onclick="history.back()">Kembali</button>
+						<div class="card-footer flex-c gx-5">
+							<div class="col flex-r">
+								<button type="submit" class="btn btn-success">Submit</button>
+							</div>
+							<div class="col">
+								<button type="button" class="btn btn-danger" onclick="history.back()">Back</button>
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>

@@ -8,7 +8,7 @@
                 <a href="index.php?" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi">COFFEE</a>
             </div>
             <div class="col-sm-4 mb-3 flex-c">
-                <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">NO COFFEE</a>
+                <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">BEVERAGE</a>
             </div>
             <div class="col-sm-4 mb-3 flex-l">
                 <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi shadow">DESSERT</a>
@@ -50,10 +50,6 @@
                                 <h4 class="card-title fs-16 p-2" style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></h4>
                                 <?php
                                 $harga = $data['harga_masakan'];
-                                if ($_SESSION['level'] == "") {
-                                    $harga = $data['harga_masakan'] + 5000;
-                                }
-
                                 ?>
                                 <p class="card-text p-2 fs-14"><strong>Rp. <?= rupiah($harga) ?></strong></p>
                             </div>

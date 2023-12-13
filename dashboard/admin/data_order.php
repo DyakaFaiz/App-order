@@ -8,16 +8,16 @@
             ORDER
         </div>
         <div class="card-body shadow">
-            <a href="index.php?home"><button class="btn btn-primary btn-sm mb-3">Entri Order</button></a>
+            <a href="index.php?home"><button class="btn btn-primary btn-sm mb-3">Input Order</button></a>
             <table class="table table-hover" id="tabel">
                 <thead>
                     <tr>
                         <th>No</th>
                         <th>No Order</th>
-                        <th>No Meja</th>
-                        <th>Tanggal Order</th>
-                        <th>Total Bayar</th>
-                        <th>Keterangan</th>
+                        <th>No Table</th>
+                        <th>Date</th>
+                        <th>Total Payment</th>
+                        <th>Notes</th>
                         <th>Option</th>
                     </tr>
                 </thead>
@@ -74,10 +74,10 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama</th>
-                                <th>Keterangan</th>
-                                <th>Harga</th>
-                                <th>Jumlah</th>
+                                <th>Name</th>
+                                <th>Notes</th>
+                                <th>Price</th>
+                                <th>Amount</th>
                                 <th>Total</th>
                             </tr>
                         </thead>
@@ -100,7 +100,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td align="right" colspan="5"><strong>Total Harga : </strong></td>
+                                <td align="right" colspan="5"><strong>Total : </strong></td>
                                 <th colspan="2">Rp. <?= rupiah($hartot['hartot']) ?></th>
                             </tr>
                         </tfoot>

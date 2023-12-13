@@ -16,7 +16,7 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
     endif; ?>
     <div class="card">
         <div class="card-header font-weight-bold">
-            TRANSAKSI
+            TRANSACTION
         </div>
         <div class="card-body shadow">
             <div class="row">
@@ -63,7 +63,7 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
                     <form action="fungsi/prosesTransaksi.php" method="POST">
                         <?php $kursi = mysqli_query($kon, "SELECT * FROM tb_meja WHERE status != 0"); ?>
                         <div class="form-group">
-                            <label for="">No Meja</label>
+                            <label for="">No Table</label>
 
                             <select class="form-control" onchange='location=this.value' required>
                                 <option selected disabled>-- No Table --</option>
