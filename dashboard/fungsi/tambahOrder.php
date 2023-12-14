@@ -10,10 +10,10 @@ $tanggal = time();
 $tanggal2 = date('d-m-Y');
 if ($meja < 1) {
   $_SESSION['pesan'] = '
-		<div class="alert alert-warning mb-2 alert-dismissible text-small " role="alert">
-			<b>Maaf!</b> Meja belum dipilih
-			<button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
-		</div>
+  <div class="alert alert-warning mb-2 alert-dismissible text-small " role="alert">
+  <b>Maaf!</b> Meja belum dipilih
+  <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+  </div>
 	';
   header('location:../index.php');
   return false;
@@ -37,26 +37,27 @@ $hartott = $hartot['hartot'];
 
 if ($query > 0) {
   $_SESSION['pesan'] = `
-		<div class="modal fade to-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-        <?php
-        $query_order = mysqli_query($kon, "SELECT count(id_order) as no_order FROM tb_order");
-        $order = mysqli_fetch_assoc($query_order);
-        $no_meja = mysqli_query($kon, "SELECT * FROM tb_meja WHERE status != 1");
-        $nono = 'ORD000' . $no_order;
-        $query_hartot = mysqli_query($kon, "SELECT sum(hartot_dorder) as hartot FROM tb_detail_order WHERE id_order = '$nono'");
-        $hartot = mysqli_fetch_assoc($query_hartot);
-        ?>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="modal-top flex-c">
-                <h3>Order Succesfully!!</h3>
-              </div>
-              <table class="table table-responsive-sm" border="0">
-                <thead>
-                  <tr class="fs-12">
+                    <div class="modal fade to-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                    <?php
+                    $query_order = mysqli_query($kon, "SELECT count(id_order) as no_order FROM tb_order");
+                    $order = mysqli_fetch_assoc($query_order);
+                    $no_meja = mysqli_query($kon, "SELECT * FROM tb_meja WHERE status != 1");
+                    $nono = 'ORD000' . $no_order;
+                    $query_hartot = mysqli_query($kon, "SELECT sum(hartot_dorder) as hartot FROM tb_detail_order WHERE id_order = '$nono'");
+                    $hartot = mysqli_fetch_assoc($query_hartot);
+                    ?>
+                    <div class="modal-body">
+                    <div class="row">
+                    <div class="col-md-12">
+                    <div class="modal-top flex-c">
+                    <img src="/dashboard/assets/image/checkList.png" alt="checkListPicture" class="rounded-circle">
+                    <h3>Order Succesfully!!</h3>
+                    </div>
+                    <table class="table table-responsive-sm" border="0">
+                    <thead>
+                    <tr class="fs-12">
                     <th>No</th>
                     <th>Name</th>
                     <th>Notes</th>
