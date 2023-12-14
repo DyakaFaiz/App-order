@@ -9,14 +9,14 @@ $user_id = $_SESSION['id_user'];
 $tanggal = time();
 $tanggal2 = date('d-m-Y');
 if ($meja < 1) {
-	$_SESSION['pesan'] = '
+  $_SESSION['pesan'] = '
 		<div class="alert alert-warning mb-2 alert-dismissible text-small " role="alert">
 			<b>Maaf!</b> Meja belum dipilih
 			<button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
 		</div>
 	';
-	header('location:../index.php');
-	return false;
+  header('location:../index.php');
+  return false;
 }
 
 mysqli_query($kon, "UPDATE tb_detail_order set status_dorde = '' WHERE id_order = '$id_order'");
@@ -25,15 +25,18 @@ mysqli_query($kon, "UPDATE tb_meja set status = 1 WHERE meja_id = '$meja'");
 
 $queryTambah = "INSERT INTO tb_order VALUES('$id_order', '$meja', '$tanggal', '$tanggal2', '$user_id', '$keterangan', 0)";
 $query = mysqli_query($kon, $queryTambah);
+
+$list_pesanan = mysqli_query($kon, "SELECT * FROM tb_detail_order WHERE id_order = 'ORD000$no_order' AND id_user = '$_SESSION[id_user]'");
+$pesanan = $list_pesanan;
 $no_order = $order['no_order'] + 1;
 $namaMasakan = $query_masakan['nama_masakan'];
 $keteranganPesanan = $pesanan['keterangan_dorder'];
 $jmlOrder = $pesanan['jumlah_dorder'];
 $totalan = $query_masakan['harga_masakan'] * $pesanan['jumlah_dorder'];
-$hartott = $hartot["hartot"];
+$hartott = $hartot['hartot'];
 
 if ($query > 0) {
-	$_SESSION['pesan'] = `
+  $_SESSION['pesan'] = `
 		<div class="modal fade to-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
@@ -41,7 +44,6 @@ if ($query > 0) {
         $query_order = mysqli_query($kon, "SELECT count(id_order) as no_order FROM tb_order");
         $order = mysqli_fetch_assoc($query_order);
         $no_meja = mysqli_query($kon, "SELECT * FROM tb_meja WHERE status != 1");
-        $list_pesanan = mysqli_query($kon, "SELECT * FROM tb_detail_order WHERE id_order = 'ORD000$no_order' AND id_user = '$_SESSION[id_user]'");
         $nono = 'ORD000' . $no_order;
         $query_hartot = mysqli_query($kon, "SELECT sum(hartot_dorder) as hartot FROM tb_detail_order WHERE id_order = '$nono'");
         $hartot = mysqli_fetch_assoc($query_hartot);
@@ -65,7 +67,7 @@ if ($query > 0) {
                 <tbody>
                   <?php $i = 1;
                   foreach ($list_pesanan as $pesanan) :
-                    $masakan = mysqli_query($kon, "SELECT * FROM tb_masakan WHERE id_masakan = '$pesanan[id_masakan]' ");
+                    $masakan = mysqli_query($kon, "SELECT * FROM tb_masakan WHERE id_masakan = '$pesanan[id_masakan]'");
                     $query_masakan = mysqli_fetch_assoc($masakan);
                   ?>
                     <tr>
@@ -102,13 +104,13 @@ if ($query > 0) {
     </div>
   </div>
 		`;
-	header('location:../index.php');
+  header('location:../index.php');
 } else {
-	$_SESSION['pesan'] = '
+  $_SESSION['pesan'] = '
 		<div class="alert alert-danger mb-2 alert-dismissible text-small " role="alert">
 			<b>Maaf!</b> Pesanan gagal diproses
 			<button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
 		</div>
 	';
-	header('location:../index.php');
+  header('location:../index.php');
 }
