@@ -5,10 +5,10 @@
   <div class="col">
     <div class="row text-center align-items-center">
       <div class="col-sm-4 mb-3 flex-r">
-        <a href="#" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi">COFFEE</a>
+        <a href="#" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi shadow">COFFEE</a>
       </div>
       <div class="col-sm-4 mb-3 flex-c">
-        <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi shadow">BEVERAGE</a>
+        <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">BEVERAGE</a>
       </div>
       <div class="col-sm-4 mb-3 flex-l">
         <a href="index.php?dessert" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">DESSERT</a>
