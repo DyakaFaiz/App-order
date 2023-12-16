@@ -202,81 +202,9 @@ include 'fungsi/rupiah.php';
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-brown border fs-14" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-brown border fs-14" data-toggle="modal" data-target=".out-example-modal-xl">Process</button>
+            <button type="submit" class="btn btn-brown border fs-14" data-toggle="modal">Process</button>
           </div>
         </form>
-
-
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade out-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header oren text-white p-4">
-          <h5 class="modal-title">Cart</h5>
-          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <?php
-        $query_order = mysqli_query($kon, "SELECT count(id_order) as no_order FROM tb_order");
-        $order = mysqli_fetch_assoc($query_order);
-        $no_order = $order['no_order'] + 1;
-        $no_meja = mysqli_query($kon, "SELECT * FROM tb_meja WHERE status != 1");
-        $list_pesanan = mysqli_query($kon, "SELECT * FROM tb_detail_order WHERE id_order = 'ORD000$no_order' AND id_user = '$_SESSION[id_user]'");
-        $nono = 'ORD000' . $no_order;
-        $query_hartot = mysqli_query($kon, "SELECT sum(hartot_dorder) as hartot FROM tb_detail_order WHERE id_order = '$nono'");
-        $hartot = mysqli_fetch_assoc($query_hartot);
-        ?>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="modal-top flex-c">
-                <h3>Order Succesfully!!</h3>
-              </div>
-              <table class="table table-responsive-sm" border="0">
-                <thead>
-                  <tr class="fs-12">
-                    <th>No</th>
-                    <th>Name</th>
-                    <th>Notes</th>
-                    <th>Amount</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php $i = 1;
-                  foreach ($list_pesanan as $pesanan) :
-                    $masakan = mysqli_query($kon, "SELECT * FROM tb_masakan WHERE id_masakan = '$pesanan[id_masakan]' ");
-                    $query_masakan = mysqli_fetch_assoc($masakan);
-                  ?>
-                    <tr>
-                      <td><?= $i++; ?></td>
-                      <td><?= $query_masakan['nama_masakan'] ?></td>
-                      <td><?= $pesanan['keterangan_dorder'] ?></td>
-                      <td align="center"><?= $pesanan['jumlah_dorder'] ?></td>
-                      <td>Rp. <?= rupiah($query_masakan['harga_masakan'] * $pesanan['jumlah_dorder']) ?></td>
-                    </tr>
-                  <?php endforeach; ?>
-                </tbody>
-                <tfoot>
-                  <tr class="fs-12">
-                    <td align="right" colspan="4"><strong>Total : </strong></td>
-                    <th colspan="2">Rp. <?= rupiah($hartot['hartot']) ?></th>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="flex-c">
-          <button type="button" class="close p-3" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">OK</span>
-          </button>
-        </div>
-
       </div>
     </div>
   </div>
