@@ -36,6 +36,7 @@ if ($query > 0) {
   $query_hartot = mysqli_query($kon, "SELECT sum(hartot_dorder) as hartot FROM tb_detail_order WHERE id_order = '$nono'");
   $hartot = mysqli_fetch_assoc($query_hartot);
   $hatot = $hartot['hartot'];
+  $i = 1;
 
   $_SESSION['pesan'] = `
   <div class="modal fade out-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
@@ -58,7 +59,7 @@ if ($query > 0) {
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $i = 1;
+                  <?php
                   foreach ($list_pesanan as $pesanan) :
                     $masakan = mysqli_query($kon, "SELECT * FROM tb_masakan WHERE id_masakan = '$pesanan[id_masakan]' "); 
                     $query_masakan = mysqli_fetch_assoc($masakan);
