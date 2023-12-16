@@ -10,10 +10,10 @@ $tanggal = time();
 $tanggal2 = date('d-m-Y');
 if ($meja < 1) {
   $_SESSION['pesan'] = '
-  <div class="alert alert-warning mb-2 alert-dismissible text-small " role="alert">
-  <b>Maaf!</b> Meja belum dipilih
-  <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
-  </div>
+		<div class="alert alert-warning mb-2 alert-dismissible text-small " role="alert">
+			<b>Maaf!</b> Meja belum dipilih
+			<button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+		</div>
 	';
   header('location:../index.php');
   return false;
@@ -27,43 +27,12 @@ $queryTambah = "INSERT INTO tb_order VALUES('$id_order', '$meja', '$tanggal', '$
 $query = mysqli_query($kon, $queryTambah);
 
 if ($query > 0) {
-  $_SESSION['pesan'] = `
-  <div class="modal fade out-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-md" role="document">
-  <div class="modal-content">
-  <div class="modal-body">
-  <div class="row">
-            <div class="col-md-12">
-            <div class="modal-top flex-c">
-            <img src="/dashboard/assets/image/checkList.png" alt="cheklist-icon" class="wrap-pic-cir pter" width="60" height="60">
-              <h3>Order Succesfully!!</h3>
-              </div>
-              <table class="table table-responsive-sm" border="0">
-              <tfoot>
-              <tr class="fs-12">
-              <td align="right" colspan="4"><strong>Total : </strong></td>
-              <th colspan="2">Rp. <?= rupiah($hatot) ?></th>
-              </tr>
-                </tfoot>
-                </table>
-                </div>
-                </div>
-                </div>
-                <div class="wrap flex-c mt-5">
-          <div class="col-5 text-center">
-            <h4 class="d-block oren text-white rounded p-1">No Table : <?= $meja ?></h4>
-            <h5 class="mb-5 mt-2">Pay at cashier</h5>
-          </div>
-        </div>
-        <div class="flex-c">
-          <button type="button" class="close p-3" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">OK</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  `;
+  $_SESSION['pesan'] = '
+		<div class="alert alert-success mb-2 alert-dismissible text-small " role="alert">
+			<b>Yoi!</b> Pesanan sedang diproses, mohon tunggu sampai masakan datang
+			<button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+		</div>
+	';
   header('location:../index.php');
 } else {
   $_SESSION['pesan'] = '
