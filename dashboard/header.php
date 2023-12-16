@@ -202,7 +202,9 @@ include 'fungsi/rupiah.php';
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-brown border fs-14" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-brown border fs-14" data-toggle="modal">Process</button>
+            <a data-target=".bd-example-modal-xl">
+              <button type="submit" class="btn btn-brown border fs-14" data-toggle="modal">Process</button>
+            </a>
           </div>
         </form>
       </div>
