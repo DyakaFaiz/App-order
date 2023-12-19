@@ -3,13 +3,13 @@
 		<?= $_SESSION['pesan'] ?>
 	<?php unset($_SESSION['pesan']);
 	endif; ?>
-	<div class="row flex-c">
+	<div class="row flex-c mt-4">
 		<div class="col-lg-6">
-			<div class="card">
-				<div class="card-header">
+			<div class="shadow p-4 rounded">
+				<div class="p-3 font-weight-bold text-center">
 					<h5><strong>Registration User</strong></h5>
 				</div>
-				<div class="card-body">
+				<div class="card-body p-1">
 					<form action="fungsi/registrasi_user.php" method="post">
 						<div class="form-group">
 							<label class="form-label" for="nama_user">Full Name</label>
@@ -32,8 +32,14 @@
 								<option value="4">Customer</option>
 							</select>
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
-						<button type="button" class="btn btn-danger" onclick="history.back()">Kembali</button>
+						<div class="card-footer flex-c gx-5">
+							<div class="col flex-r">
+								<button type="submit" class="btn btn-success">Submit</button>
+							</div>
+							<div class="col">
+								<button type="button" class="btn btn-danger" onclick="history.back()">Back</button>
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>

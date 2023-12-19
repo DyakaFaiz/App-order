@@ -15,7 +15,7 @@ $jumlahkasir = mysqli_query($kon, "SELECT COUNT(*) AS kasir FROM tb_user WHERE i
 $kasir = mysqli_fetch_assoc($jumlahkasir);
 $jumlahadmin = mysqli_query($kon, "SELECT COUNT(*) AS admin FROM tb_user WHERE id_level='1' ");
 $admin = mysqli_fetch_assoc($jumlahadmin);
-
+$level = $_SESSION['level'];
 
 ?>
 <div class="container mt-5 p-4">
@@ -40,7 +40,9 @@ $admin = mysqli_fetch_assoc($jumlahadmin);
 						<div class="card-body">
 							<h5 class="card-title">Today's Total Sales : <?= $date ?></h5>
 							<span class="btn btn-success btn-sm text-small"><?= $sudah['sudah_bayar'] ?> Paid</span>
-							<span class="btn btn-danger btn-sm text-small"><?= $belum['belum_bayar'] ?> Not Paid</span>
+							<?php if ($level !== "Owner") : ?>
+								<span class="btn btn-danger btn-sm text-small"><?= $belum['belum_bayar'] ?> Not Paid</span>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>

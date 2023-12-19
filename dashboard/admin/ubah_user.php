@@ -9,11 +9,11 @@ $sql2 = mysqli_query($kon, "SELECT * FROM tb_level");
 <div class="container mt-4">
 	<div class="row flex-c">
 		<div class="col-lg-6">
-			<div class="shadow p-5 rounded">
+			<div class="shadow p-4 rounded">
 				<div class="card-header mb-3 text-center fs-20">
 					<strong>Update User</strong>
 				</div>
-				<div class="card-body p-4">
+				<div class="card-body p-3">
 					<form action="fungsi/ubahUser.php?id_user=<?= $data['id_user'] ?>" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label class="form-label" for="nama_user">Full Name</label>
