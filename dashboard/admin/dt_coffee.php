@@ -1,25 +1,26 @@
-<div class="container mt-3">
+<div class="container p-2">
 	<?php if (isset($_SESSION['pesan'])) : ?>
 		<?= $_SESSION['pesan'] ?>
 	<?php unset($_SESSION['pesan']);
 	endif; ?>
 	<div class="row flex-c">
 		<div class="col-md-11 p-3">
-
 			<div class="p-4 font-weight-bold shadow-sm rounded">
 				Coffee
 			</div>
 			<div class="shadow rounded mt-1">
 				<div class="card-body p-4">
-					<a href="#"><button class="btn btn-primary btn-sm mb-3">Coffee Data</button></a>
-					<a href="index.php?dtNoCoffee"><button class="btn btn-primary btn-sm mb-3">Beverage Data</button></a>
-					<a href="index.php?dtDessert"><button class="btn btn-primary btn-sm mb-3">Dessert Data</button></a>
-					<?php
-					$level = $_SESSION['level'];
-					if ($level == "Admin") :
-					?>
-						<a href="index.php?tambah_makanan"><button class="btn btn-success btn-sm mb-3 float-right">Add Menu</button></a>
-					<?php endif; ?>
+					<div class="mb-2">
+						<a href="#"><button class="tombol aktip">Coffee Data</button></a>
+						<a href="index.php?dtNoCoffee"><button class="tombol">Beverage Data</button></a>
+						<a href="index.php?dtDessert"><button class="tombol">Dessert Data</button></a>
+						<?php
+						$level = $_SESSION['level'];
+						if ($level == "Admin") :
+						?>
+							<a href="index.php?tambah_makanan"><button class="tombol float-right"><i class="fas fa-plus ml-3 mr-3"></i></button></a>
+						<?php endif; ?>
+					</div>
 					<table class="table table-hover table-responsive-lg" id="tabel">
 						<thead>
 							<tr>
@@ -41,7 +42,7 @@
 							$i = 1;
 							$sql = mysqli_query($kon, "SELECT * FROM tb_masakan WHERE kategori_masakan='Coffee'");
 							while ($data = mysqli_fetch_array($sql)) : ?>
-								<tr>
+								<tr class="shadow-sm">
 									<td><?= $i++; ?></td>
 									<td style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></td>
 									<td><?= $data['harga_masakan'] ?></td>
@@ -57,8 +58,8 @@
 									<?php if ($level == "Admin") : ?>
 										<td>
 											<div class="btn-group">
-												<a href="index.php?ubah_makanan=<?= $data['id_masakan'] ?>" class="btn btn-sm btn-warning rounded">Edit</a>
-												<a href="fungsi/hapusMakanan.php?id_masakan=<?= $data['id_masakan']; ?>" class="btn btn-danger btn-sm ml-2 rounded">Delete</a>
+												<a href="index.php?ubah_makanan=<?= $data['id_masakan'] ?>" class="btn-edit"><i class="far fa-pencil-alt ml-1 mr-1"></i></a>
+												<a href="fungsi/hapusMakanan.php?id_masakan=<?= $data['id_masakan']; ?>" class="btn-delete ml-2"><i class="fad fa-trash ml-1 mr-1"></i></a>
 											</div>
 										</td>
 									<?php endif; ?>

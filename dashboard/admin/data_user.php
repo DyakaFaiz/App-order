@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="../../auth/css/main.css">
-<link rel="stylesheet" href="/dashboard/assets/css/custom.css">
-<div class="container mt-3">
+<div class="container p-3">
 	<div class="row flex-c">
 		<div class="col-md-11 p-3">
 			<?php if (isset($_SESSION['pesan'])) : ?>
@@ -12,7 +11,7 @@
 			</div>
 
 			<div class="shadow p-4 shadow-sm rounded mt-1">
-				<a href="index.php?registrasi"><button class="tombol">Add User</button></a>
+				<a href="index.php?registrasi"><button class="tombol mb-3"><i class="fas fa-plus p-1"></i> User</button></a>
 				<table class="table table-responsive-lg" id="tabel">
 					<thead>
 						<tr>
@@ -67,8 +66,8 @@
 								<?php if ($_SESSION['level'] == "Admin") : ?>
 									<td>
 										<div class="btn-group">
-											<a href="index.php?ubah_user=<?= $data['id_user'] ?>" class="btn btn-sm btn-warning rounded">Edit</a>
-											<a href="fungsi/hapusUser.php?id_user=<?= $data['id_user']; ?>" class="btn btn-danger btn-sm ml-2 rounded">Delete</a>
+											<a href="index.php?ubah_user=<?= $data['id_user'] ?>" class="btn-edit"><i class="far fa-pencil-alt mr-1 ml-1"></i></a>
+											<a href="fungsi/hapusUser.php?id_user=<?= $data['id_user']; ?>" class="btn-delete ml-2"><i class="fad fa-trash mr-1 ml-1"></i></a>
 										</div>
 									</td>
 								<?php endif; ?>

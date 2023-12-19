@@ -34,10 +34,10 @@
 						</div>
 						<div class="card-footer flex-c gx-5">
 							<div class="col flex-r">
-								<button type="submit" class="btn btn-success">Submit</button>
+								<button type="submit" class="btn-edit">Submit</button>
 							</div>
 							<div class="col">
-								<button type="button" class="btn btn-danger" onclick="history.back()">Back</button>
+								<button type="button" class="btn-delete" onclick="history.back()">Back</button>
 							</div>
 						</div>
 					</form>

@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container p-3">
     <?php if (isset($_SESSION['pesan'])) : ?>
         <?= $_SESSION['pesan'] ?>
     <?php unset($_SESSION['pesan']);
@@ -9,7 +9,9 @@
                 REPORT
             </div>
             <div class="shadow p-4 shadow-sm rounded mt-1">
-                <a href="admin/semua_laporan.php" target="_blank" class="btn btn-primary btn-sm mb-3">Print All Reports <i class="fa fa-print"></i></a>
+                <div class="mb-4">
+                    <a href="admin/semua_laporan.php" target="_blank" class="tombol p-3 fs-14">Print All Reports <i class="fa fa-print"></i></a>
+                </div>
                 <table class="table table-hover table-striped table-responsive-lg fs-12" id="tabel">
                     <thead>
                         <tr>

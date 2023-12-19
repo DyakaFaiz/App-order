@@ -15,11 +15,11 @@ if ($data['kategori_masakan'] == "Coffee") {
 	$sd = "Selected";
 }
 ?>
-<div class="container mt-3">
+<div class="container p-3">
 	<div class="row flex-c">
-		<div class="col-lg-7">
-			<div class="card">
-				<div class="card-header">
+		<div class="col-lg-6">
+			<div class="shadow p-4 rounded">
+				<div class="card-header  mb-3 text-center fs-20">
 					<strong>Change <?= $kategori; ?></strong>
 				</div>
 				<div class="card-body">
@@ -86,8 +86,14 @@ if ($data['kategori_masakan'] == "Coffee") {
 								</div>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
-						<button type="button" class="btn btn-danger" onclick="history.back()">Back</button>
+						<div class="card-footer flex-c gx-5">
+							<div class="col flex-r">
+								<button type="submit" class="btn-edit">Submit</button>
+							</div>
+							<div class="col">
+								<button type="button" class="btn-delete" onclick="history.back()">Back</button>
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>

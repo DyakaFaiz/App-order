@@ -17,9 +17,6 @@ include 'fungsi/rupiah.php';
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700&display=swap" rel="stylesheet">
-  <!-- Owl Carousel -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Datatables -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css" />
   <!-- Font Awesome -->
@@ -97,7 +94,12 @@ include 'fungsi/rupiah.php';
               <ul class="navbar-nav">
                 <?php if ($_SESSION['level'] == "") : ?>
                   <li class="nav-item dropdown align-items-center flex-c">
-                    <a href="../auth/index.php" class="nav-link text-decoration-none text-white mr-4 p-2" style="background-color: #b94d05;">Login</a>
+                    <a href="../auth/index.php" class="btn-lgn mr-2">
+                      Log In
+                      <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                      </div>
+                    </a>
                   <?php else : ?>
                   <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle <?= $htm ?>" data-toggle="dropdown" role="button"><i class="fa fa-user mr-2"></i><?= $_SESSION['level'], " - ", $_SESSION['nama_user'] ?><span class="mr-1"></span></a>

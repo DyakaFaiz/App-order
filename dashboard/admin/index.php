@@ -54,11 +54,14 @@
                 <p class="card-text p-2 fs-14"><strong>Rp. <?= rupiah($harga) ?></strong></p>
               </div>
               <?php if ($data['status_masakan'] == 1) : ?>
-                <button type="button" class="btn btn-sm btn-block text-white" style="background-color: #b94d05;" data-toggle="modal" data-target="#masakan_<?= $data['id_masakan']; ?>">
-                  Add To Cart
+                <button data-toggle="modal" data-target="#masakan_<?= $data['id_masakan']; ?>" class="btn-add mt-2">
+                  <span class="shadow2"></span>
+                  <span class="edge2"></span>
+                  <span class="front2 text2"> Add To Cart
+                  </span>
                 </button>
               <?php else : ?>
-                <a href="index.php?tambah=<?= $data['id_masakan'] ?>" class="btn btn-grey btn-sm btn-block disabled">Out Of Stock</a>
+                <a href="index.php?tambah=<?= $data['id_masakan'] ?>" class="btn btn-grey btn-sm btn-block disabled mt-2">Out Of Stock</a>
               <?php endif; ?>
             </div>
           </div>
@@ -100,9 +103,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-brown border fs-14" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-brown border fs-14">Add</button>
+                  <div class="p-4 float-right">
+                    <button type="button" class="tombol" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="tombol">Add</button>
                   </div>
                 </form>
               </div>

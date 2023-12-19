@@ -1,9 +1,9 @@
 <div class="container mt-3">
 	<div class="row flex-c">
 		<div class="col-lg-8">
-			<div class="card shadow">
-				<div class="card-header">
-					<strong>Add Menu</strong>
+			<div class="shadow p-4 rounded">
+				<div class="p-3 font-weight-bold text-center">
+					<h5><strong>Add Menu</strong></h5>
 				</div>
 				<div class="card-body">
 					<form action="fungsi/tambahMakanan.php" method="post" enctype="multipart/form-data">
@@ -37,9 +37,13 @@
 								<input type="file" class="custom-file-input" id="foto" name="foto" required>
 							</div>
 						</div>
-						<div class="flex-r">
-							<button type="submit" class="btn btn-primary">Submit</button>
-							<button type="button" class="btn btn-danger" onclick="history.back()">Back</button>
+						<div class="flex-c gx-5 p-3">
+							<div class="col flex-r">
+								<button type="submit" class="btn-edit">Submit</button>
+							</div>
+							<div class="col">
+								<button type="button" class="btn-delete" onclick="history.back()">Back</button>
+							</div>
 						</div>
 					</form>
 				</div>
