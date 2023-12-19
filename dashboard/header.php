@@ -104,9 +104,12 @@ include 'fungsi/rupiah.php';
                     <a class="dropdown-menu text-center btn btn-brown mt-1" href="../auth/logout.php">Logout</a>
                   </li>
                 <?php endif; ?>
-                <a class="nav-link mr-3 hov-pointer" data-toggle="modal" data-target=".bd-example-modal-xl">
-                  <i class="fa fa-shopping-cart p-2"></i>
-                </a>
+
+                <?php if ($level !== "Owner" && $level !== "Admin") : ?>
+                  <a class="nav-link mr-3 hov-pointer" data-toggle="modal" data-target=".bd-example-modal-xl">
+                    <i class="fa fa-shopping-cart p-2"></i>
+                  </a>
+                <?php endif; ?>
                 </li>
               </ul>
             </div>
