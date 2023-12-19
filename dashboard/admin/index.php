@@ -54,11 +54,8 @@
                 <p class="card-text p-2 fs-14"><strong>Rp. <?= rupiah($harga) ?></strong></p>
               </div>
               <?php if ($data['status_masakan'] == 1) : ?>
-                <button data-toggle="modal" data-target="#masakan_<?= $data['id_masakan']; ?>" class="btn-add mt-2">
-                  <span class="shadow2"></span>
-                  <span class="edge2"></span>
-                  <span class="front2 text2"> Add To Cart
-                  </span>
+                <button type="button" class="btn btn-sm btn-block text-white" style="background-color: #b94d05;" data-toggle="modal" data-target="#masakan_<?= $data['id_masakan']; ?>">
+                  Add To Cart
                 </button>
               <?php else : ?>
                 <a href="index.php?tambah=<?= $data['id_masakan'] ?>" class="btn btn-grey btn-sm btn-block disabled mt-2">Out Of Stock</a>
@@ -70,7 +67,7 @@
           <div class="modal fade" id="masakan_<?= $data['id_masakan']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xs" role="document">
               <div class="modal-content">
-                <div class="modal-header oren">
+                <div class="p-3 oren header-shadow">
                   <h5 class="modal-title text-white" id="exampleModalLabel">Add To Cart</h5>
                   <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -80,7 +77,7 @@
                   <div class="modal-body">
                     <div class="row">
                       <div class="col-sm-7 flex-c">
-                        <img src="assets/image/Coffee/<?= $data['foto'] ?>" alt="" style="" class="card-img-top shadow p-2 img-thumbnail">
+                        <img src="assets/image/Coffee/<?= $data['foto'] ?>" alt="" style="" class="card-img shadow p-2">
                       </div>
                       <div class="col-sm-5">
                         <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">
@@ -104,8 +101,8 @@
                     </div>
                   </div>
                   <div class="p-4 float-right">
-                    <button type="button" class="tombol" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="tombol">Add</button>
+                    <button type="button" class="btn btn-sm text-white oren p-2" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-sm text-white oren p-2">Add</button>
                   </div>
                 </form>
               </div>
