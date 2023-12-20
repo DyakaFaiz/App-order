@@ -23,6 +23,7 @@ include 'fungsi/rupiah.php';
   <link rel="stylesheet" href="../dashboard/assets/css/custom.css">
   <link rel="stylesheet" href="assets/fontawesome-pro/css/all.min.css">
   <link rel="stylesheet" href="../auth/css/util.css">
+  <link rel="stylesheet" href="/auth/css/main.css">
   <link rel="icon" type="image/jpg" href="/dashboard/assets/image/logoIcon.jpg" style="border-radius: 50%;" />
   <!-- <script src="https://kit.fontawesome.com/7ff23e7e04.js" crossorigin="anonymus"></script> -->
   <title>Take It!</title>
@@ -87,7 +88,7 @@ include 'fungsi/rupiah.php';
                   <a class="nav-link nav-item p-2 <?= $lap, $htm ?>" href="index.php?laporan">Report <span class="sr-only">(current)</span></a>
 
                 <?php elseif ($level == "Customer" || $level == "") : ?>
-                  <a class="nav-link ml-3 fs-15 text-center p-2 <?= $home ?>" href="index.php">Home</a>
+                  <a class="nav-link ml-3 fs-15 text-center p-2 <?= $home ?>" href="index.php"><span class="mr-2 ml-2">Home</span></a>
                 <?php endif; ?>
 
               </ul>
@@ -103,7 +104,7 @@ include 'fungsi/rupiah.php';
                   <?php else : ?>
                   <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle <?= $htm ?>" data-toggle="dropdown" role="button"><i class="fa fa-user mr-2"></i><?= $_SESSION['level'], " - ", $_SESSION['nama_user'] ?><span class="mr-1"></span></a>
-                    <a class="dropdown-menu text-center btn btn-brown mt-1" href="../auth/logout.php">Logout</a>
+                    <a class="dropdown-menu btn-logout text-center btn btn-brown mt-1" href="../auth/logout.php">Logout</a>
                   </li>
                 <?php endif; ?>
 
@@ -125,7 +126,7 @@ include 'fungsi/rupiah.php';
   <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header oren text-white p-4">
+        <div class="modal-header header-shadow text-white p-4">
           <h5 class="modal-title">Cart</h5>
           <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -142,29 +143,29 @@ include 'fungsi/rupiah.php';
         $hartot = mysqli_fetch_assoc($query_hartot);
         ?>
         <form action="fungsi/tambahOrder.php" method="POST">
-          <div class="modal-body">
+          <div class="modal-body p-4">
             <div class="row">
               <div class="col-md-4">
-                <div class="form-group">
-                  <label>No Order</label>
-                  <input type="text" readonly name="id_order" class="form-control" value="ORD000<?= $no_order; ?>">
+                <div class="form-group row shadow-sm rounded p-2">
+                  <label class="bgan font-weight-bold">No Order</label>
+                  <span name="id_order">ORD000<?= $no_order; ?></span>
                 </div>
-                <div class="form-group">
-                  <label for="">No Table</label>
+                <div class="form-group row shadow-sm rounded p-2">
+                  <label class="bgan font-weight-bold">No Table</label>
                   <select name="meja" class="form-control" required>
-                    <option selected value="0">-- Select Table --</option>
+                    <option selected value="0" disabled>Select Table ⇩</option>
                     <?php foreach ($no_meja as $meja) : ?>
                       <option value="<?= $meja['meja_id'] ?>"><?= $meja['meja_id'] ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
-                <div class="form-group">
-                  <label>Notes</label>
+                <div class="form-group row shadow-sm rounded p-2">
+                  <label class="bgan font-weight-bold">Notes</label>
                   <textarea name="keterangan" class="form-control"></textarea>
                 </div>
               </div>
               <div class="col-md-8">
-                <table class="table table-striped table-responsive-sm">
+                <table class="table table-responsive-sm">
                   <thead>
                     <tr class="fs-12">
                       <th>No</th>
@@ -190,24 +191,30 @@ include 'fungsi/rupiah.php';
                         <td align="center"><?= $pesanan['jumlah_dorder'] ?></td>
                         <td>Rp. <?= rupiah($query_masakan['harga_masakan'] * $pesanan['jumlah_dorder']) ?></td>
                         <td>
-                          <a href="fungsi/hapusOrder.php?id=<?= $pesanan['id_dorder'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                          <a href="fungsi/hapusOrder.php?id=<?= $pesanan['id_dorder'] ?>" class="btn-delete"><i class="fa fa-trash"></i></a>
                         </td>
                       </tr>
                     <?php endforeach; ?>
                   </tbody>
-                  <tfoot>
-                    <tr class="fs-12">
-                      <td align="right" colspan="5"><strong>Total : </strong></td>
-                      <th colspan="2">Rp. <?= rupiah($hartot['hartot']) ?></th>
-                    </tr>
-                  </tfoot>
                 </table>
+                <div class="mt-3 float-right mr-3">
+                  <strong>Total : </strong>
+                  <span><strong>Rp. <?= rupiah($hartot['hartot']) ?></strong></span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-brown border fs-14" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-brown border fs-14" data-toggle="modal">Process</button>
+          <div class="p-3 float-right">
+            <button type="button" class="btn-cancel noselect" data-dismiss="modal"><span class="text2">Cancel</span><span class="icon2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                </svg></span></button>
+            <?php if ($query_masakan > 1) :
+              $disbld = 'disabled'; ?>
+              <button type="submit" class="btn-process noselect" data-toggle="modal"><span class="text2 <?= $disbld ?>">Pay</span><span class="icon2"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                    <path d="M173.9 439.4l-166.4-166.4c-10-10-10-26.2 0-36.2l36.2-36.2c10-10 26.2-10 36.2 0L192 312.7 432.1 72.6c10-10 26.2-10 36.2 0l36.2 36.2c10 10 10 26.2 0 36.2l-294.4 294.4c-10 10-26.2 10-36.2 0z" />
+                  </svg></span></button>
+            <?php
+            endif; ?>
           </div>
         </form>
       </div>

@@ -18,11 +18,11 @@
 </div>
 
 <div class="container shadow b-r-navbar">
-  <?php if (isset($_SESSION['pesan'])) : ?>
-    <?= $_SESSION['pesan'] ?>
-  <?php unset($_SESSION['pesan']);
-  endif; ?>
   <div class="row p-3">
+    <?php if (isset($_SESSION['pesan'])) : ?>
+      <?= $_SESSION['pesan'] ?>
+    <?php unset($_SESSION['pesan']);
+    endif; ?>
     <div class="container-title text-center">
       <h4 class="mb-2 fs-20">Coffee</h4>
     </div>
@@ -58,51 +58,65 @@
                   Add To Cart
                 </button>
               <?php else : ?>
-                <a href="index.php?tambah=<?= $data['id_masakan'] ?>" class="btn btn-grey btn-sm btn-block disabled mt-2">Out Of Stock</a>
+                <a href="#" class="btn btn-grey btn-sm btn-block disabled mt-2">Out Of Stock</a>
               <?php endif; ?>
             </div>
           </div>
 
           <!-- Modal -->
           <div class="modal fade" id="masakan_<?= $data['id_masakan']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xs" role="document">
+            <div class="modal-dialog modal-xs bg-modal" role="document">
               <div class="modal-content">
-                <div class="p-3 oren header-shadow">
-                  <h5 class="modal-title text-white" id="exampleModalLabel">Add To Cart</h5>
-                  <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                <div class="p-3 header-shadow flex-c">
+                  <h5 class="modal-title text-white mr-5 mb-3" id="exampleModalLabel">Add To Cart</h5>
+                  <button type="button" class="close text-white mb-3" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <form action="fungsi/orderMakanan.php" method="POST">
-                  <div class="modal-body">
+                  <div class="modal-body mt-2 p-4">
                     <div class="row">
                       <div class="col-sm-7 flex-c">
                         <img src="assets/image/Coffee/<?= $data['foto'] ?>" alt="" style="" class="card-img shadow p-2">
                       </div>
                       <div class="col-sm-5">
                         <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">
-                        <div class="form-group">
-                          <label>Menu</label>
-                          <input type="text" readonly class="form-control" value="<?= $data['nama_masakan'] ?>">
+                        <div class="form-group row shadow-sm rounded p-2">
+                          <label class="bgan font-weight-bold">Menu :</label>
+                          <span><?= $data['nama_masakan'] ?></span>
                         </div>
-                        <div class="form-group">
-                          <label>Harga</label>
-                          <input type="text" readonly class="form-control" value="<?= $data['harga_masakan'] ?>">
+                        <div class="form-group row shadow-sm rounded p-2">
+                          <label class="bgan font-weight-bold">Harga :</label>
+                          <span><?= rupiah($data['harga_masakan']) ?></span>
                         </div>
-                        <div class="form-group">
-                          <label>Jumlah Pesanan</label>
+                        <div class="form-group row shadow-sm rounded p-2">
+                          <label class="bgan font-weight-bold">Jumlah Pesanan :</label>
                           <input type="number" class="form-control" name="jumlah" value="1" min="1" max="20">
                         </div>
-                        <div class="form-group">
-                          <label>Keterangan</label>
+                        <div class="form-group row shadow-sm rounded p-2">
+                          <label class="bgan font-weight-bold">Keterangan :</label>
                           <textarea name="keterangan" class="form-control"></textarea>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="p-4 float-right">
-                    <button type="button" class="btn btn-sm text-white oren p-2" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-sm text-white oren p-2">Add</button>
+                  <div class="p-3 float-right">
+                    <button type="button" data-dismiss="modal" class="btn-cancel-cart mr-2">
+                      <span class="circle1"></span>
+                      <span class="circle2"></span>
+                      <span class="circle3"></span>
+                      <span class="circle4"></span>
+                      <span class="circle5"></span>
+                      <span class="btn-cancel-text">Cancel</span>
+                    </button>
+                    <button type="submit" class="btn-add">
+                      <span class="circle1"></span>
+                      <span class="circle2"></span>
+                      <span class="circle3"></span>
+                      <span class="circle4"></span>
+                      <span class="circle5"></span>
+                      <span class="btn-add-text"><i class="fas fa-plus-square"></i></span>
+                    </button>
                   </div>
                 </form>
               </div>

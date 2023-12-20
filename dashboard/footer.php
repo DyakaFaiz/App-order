@@ -37,6 +37,7 @@
 
 <!-- Aos -->
 <script type="text/javascript" src="assets/aos/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
     function sum() {

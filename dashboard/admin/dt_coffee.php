@@ -6,7 +6,7 @@
 	<div class="row flex-c">
 		<div class="col-md-11 p-3">
 			<div class="p-4 font-weight-bold shadow-sm rounded">
-				Coffee
+
 			</div>
 			<div class="shadow rounded mt-1">
 				<div class="card-body p-4">
