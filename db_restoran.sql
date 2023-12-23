@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2023 at 02:26 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- Generation Time: Dec 23, 2023 at 05:07 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -144,13 +144,6 @@ CREATE TABLE `tb_order` (
   `status_order` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Dumping data for table `tb_order`
---
-
-INSERT INTO `tb_order` (`id_order`, `meja_order`, `tanggal_order`, `aTanggal_order`, `id_user`, `keterangan_order`, `status_order`) VALUES
-('ORD0001', 1, 1591074127, '02-06-2020', 8, 'jangan lama', '1');
-
 -- --------------------------------------------------------
 
 --
@@ -190,9 +183,9 @@ CREATE TABLE `tb_user` (
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nama_user`, `id_level`) VALUES
 (1, 'doni', '123', 'Reva Doni Aprilio', 1),
-(7, 'pinu', '123', 'M. Finuary Renggalih', 4),
-(25, 'anna', '123', 'Nabila', 3),
-(26, 'Faiz', '123', 'Dyaka Faiz', 2);
+(2, 'Faiz', '123', 'Dyaka Faiz', 2),
+(3, 'anna', '123', 'Nabila', 3),
+(4, 'pinu', '123', 'M. Finuary Renggalih', 4);
 
 --
 -- Indexes for dumped tables
@@ -249,7 +242,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_detail_order`
 --
 ALTER TABLE `tb_detail_order`
-  MODIFY `id_dorder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_dorder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `tb_level`
@@ -273,13 +266,13 @@ ALTER TABLE `tb_meja`
 -- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

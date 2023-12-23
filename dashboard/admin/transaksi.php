@@ -6,7 +6,7 @@ if (isset($_GET['meja'])) {
     $detail_order = mysqli_query($kon, "SELECT * FROM tb_detail_order WHERE id_order = '$order[id_order]'");
 }
 
-$member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
+$member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 4");
 
 ?>
 <div class="container mt-3">
@@ -14,11 +14,13 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
         <?= $_SESSION['pesan'] ?>
     <?php unset($_SESSION['pesan']);
     endif; ?>
-    <div class="card">
-        <div class="card-header font-weight-bold">
-            TRANSACTION
-        </div>
-        <div class="card-body shadow">
+
+    <div class="p-4 font-weight-bold shadow-sm rounded">
+        TRANSACTION
+    </div>
+
+    <div class="shadow p-4 shadow-sm rounded mt-1">
+        <div class="card-body">
             <div class="row">
                 <div class="col-md-8">
                     <?php if (isset($_GET['meja'])) : ?>
@@ -66,7 +68,7 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 5");
                             <label for="">No Table</label>
 
                             <select class="form-control" onchange='location=this.value' required>
-                                <option selected disabled>-- No Table --</option>
+                                <option selected disabled>Select Table ⇩</option>
 
                                 <?php if (isset($_GET['meja'])) : ?>
                                     <?php foreach ($kursi as $kurs) : ?>

@@ -126,8 +126,8 @@ include 'fungsi/rupiah.php';
   <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header header-shadow text-white p-4">
-          <h5 class="modal-title">Cart</h5>
+        <div class="p-3 header-shadow flex-c">
+          <h5 class="modal-title text-white mr-5">Cart</h5>
           <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -148,7 +148,7 @@ include 'fungsi/rupiah.php';
               <div class="col-md-4">
                 <div class="form-group row shadow-sm rounded p-2">
                   <label class="bgan font-weight-bold">No Order</label>
-                  <span name="id_order">ORD000<?= $no_order; ?></span>
+                  <input name="id_order" class="form-control" value="ORD000<?= $no_order; ?>" type="text">
                 </div>
                 <div class="form-group row shadow-sm rounded p-2">
                   <label class="bgan font-weight-bold">No Table</label>
