@@ -5,6 +5,7 @@ require '../../koneksi.php';
 $id_order = htmlspecialchars($_POST['id_order']);
 $meja = htmlspecialchars($_POST['meja']);
 $member = htmlspecialchars($_POST['member']);
+$cashier = $_SESSION['nama_user'];
 $total_harga = htmlspecialchars($_POST['total_harga']);
 $diskon = htmlspecialchars($_POST['diskon']);
 $total_bayar = htmlspecialchars($_POST['total_bayar']);
@@ -28,7 +29,7 @@ if ($uang < $total_bayar) {
 
     mysqli_query($kon, "UPDATE tb_meja set status = 0 WHERE meja_id = '$meja'");
 
-    $queryTambah = "INSERT INTO tb_transaksi VALUES(NULL, '$member', '$id_order', '$tanggal', '$tanggal2', '$total_harga', '$diskon', '$total_bayar', '$uang', '$kembalian')";
+    $queryTambah = "INSERT INTO tb_transaksi VALUES(NULL, '$member','$cashier', '$id_order', '$tanggal', '$tanggal2', '$total_harga', '$diskon', '$total_bayar', '$uang', '$kembalian')";
     $query = mysqli_query($kon, $queryTambah);
     if ($query > 0) {
         $_SESSION['pesan'] = '

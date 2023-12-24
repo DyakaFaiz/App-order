@@ -7,6 +7,7 @@ if (isset($_GET['meja'])) {
 }
 
 $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 4");
+$cashier = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 3");
 
 ?>
 <div class="container mt-3">
@@ -39,6 +40,7 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 4");
                                 <th>Quantity</th>
                                 <th>Price</th>
                                 <th>Total Price</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <?php if (isset($_GET['meja'])) : ?>
@@ -53,6 +55,9 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 4");
                                         <td><?= $row['jumlah_dorder'] ?></td>
                                         <td>Rp. <?= rupiah($masakan['harga_masakan']) ?></td>
                                         <td>Rp. <?= rupiah($masakan['harga_masakan'] * $row['jumlah_dorder']) ?></td>
+                                        <td class="btn-group">
+                                            <a href="index.php?ubah_transaksi=<?= $row['id_dorder'] ?>" class="btn-edit btn-block"><i class="far fa-pencil-alt ml-1 mr-1"></i></a>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -83,15 +88,23 @@ $member = mysqli_query($kon, "SELECT * FROM tb_user WHERE id_level = 4");
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="">Member</label>
-                            <select name="member" class="form-control">
-                                <option selected value=""></option>
-                                <?php foreach ($member as $m) : ?>
-                                    <option value="<?= $m['id_user'] ?>"><?= $m['nama_user'] ?></option>
-                                <?php endforeach ?>
-                            </select>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="">Member</label>
+                                    <select name="member" class="form-control">
+                                        <option selected value=""></option>
+                                        <?php foreach ($member as $m) : ?>
+                                            <option value="<?= $m['id_user'] ?>"><?= $m['nama_user'] ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="">Cashier</label>
+                                    <input type="text" class="p-2 rounded" name="cashier" value="<?= $_SESSION['nama_user'] ?>" disabled>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
+                        <div class=" form-group">
                             <label for="">Total</label>
                             <?php
                             if (isset($_GET['meja'])) {

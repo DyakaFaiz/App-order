@@ -36,6 +36,8 @@ if (isset($_GET['registrasi'])) {
 	include 'admin/dt_nocoffee.php';
 } elseif (isset($_GET['dtDessert'])) {
 	include 'admin/dt_dessert.php';
+} elseif (isset($_GET['ubah_transaksi'])) {
+	include 'admin/ubah_transaksi.php';
 } else {
 	include 'admin/index.php';
 }

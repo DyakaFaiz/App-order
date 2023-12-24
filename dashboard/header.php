@@ -24,7 +24,7 @@ include 'fungsi/rupiah.php';
   <link rel="stylesheet" href="assets/fontawesome-pro/css/all.min.css">
   <link rel="stylesheet" href="../auth/css/util.css">
   <link rel="stylesheet" href="/auth/css/main.css">
-  <link rel="icon" type="image/jpg" href="/dashboard/assets/image/logoIcon.jpg" style="border-radius: 50%;" />
+  <link rel="icon" type="image/jpg" href="/dashboard/assets/image/logoIcon.jpg" />
   <!-- <script src="https://kit.fontawesome.com/7ff23e7e04.js" crossorigin="anonymus"></script> -->
   <title>Take It!</title>
 

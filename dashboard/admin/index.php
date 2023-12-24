@@ -17,13 +17,13 @@
   </div>
 </div>
 
-<div class="container shadow b-r-navbar">
-  <div class="row p-3">
+<div class="container w-75 shadow b-r-navbar">
+  <div class="row">
     <?php if (isset($_SESSION['pesan'])) : ?>
       <?= $_SESSION['pesan'] ?>
     <?php unset($_SESSION['pesan']);
     endif; ?>
-    <div class="container-title text-center">
+    <div class="container-title text-center p-2">
       <h4 class="mb-2 fs-20">Coffee</h4>
     </div>
     <div class="col-md-12">
@@ -47,7 +47,7 @@
                   <?php endif; ?>
 
                 </div>
-                <h4 class="card-title fs-16 p-2" style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></h4>
+                <h4 class="card-title fs-14 p-2" style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></h4>
                 <?php
                 $harga = $data['harga_masakan'];
                 ?>
@@ -83,7 +83,7 @@
                         <input type="hidden" name="id_masakan" value="<?= $data['id_masakan'] ?>">
                         <div class="form-group row shadow-sm rounded p-2">
                           <label class="bgan font-weight-bold">Menu :</label>
-                          <span><?= $data['nama_masakan'] ?></span>
+                          <span style="text-transform: capitalize;"><?= $data['nama_masakan'] ?></span>
                         </div>
                         <div class="form-group row shadow-sm rounded p-2">
                           <label class="bgan font-weight-bold">Harga :</label>

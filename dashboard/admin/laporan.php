@@ -19,6 +19,7 @@
                             <th>No Order</th>
                             <th>No Table</th>
                             <th>Costumer</th>
+                            <th>Cashier</th>
                             <th>Transaction Date</th>
                             <th>Total Payment</th>
                             <th>Discount</th>
@@ -33,6 +34,8 @@
                         $user = mysqli_fetch_assoc($user_query);
                         $order_query =  mysqli_query($kon, "SELECT * FROM tb_order WHERE id_order = '$row[id_order]'");
                         $oq = mysqli_fetch_assoc($order_query);
+                        $kasir = mysqli_query($kon, "SELECT * FROM tb_transaksi WHERE nama_kasir = '$row[nama_kasir]'");
+                        $k = mysqli_fetch_assoc($kasir);
                     ?>
                         <tbody>
                             <tr>
@@ -40,6 +43,7 @@
                                 <td><?= $row['id_order'] ?></td>
                                 <td><?= $oq['meja_order'] ?></td>
                                 <td><?= $user['nama_user'] ?></td>
+                                <td><?= $k['nama_kasir'] ?></td>
                                 <td><?= date('d-m-Y H:i', $oq['tanggal_order']) ?></td>
                                 <td>Rp. <?= rupiah($row['hartot_transaksi']) ?></td>
                                 <td><?= $row['diskon_transaksi'] ?>%</td>

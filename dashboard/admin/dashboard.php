@@ -19,11 +19,11 @@ $level = $_SESSION['level'];
 
 ?>
 <div class="container mt-5 p-4">
-	<div class="card text-white mb-3 shadow" style="background-color: #b94d05;">
+	<div class="b-r-navbar text-white mb-3 shadow p-3" style="background-color: #b94d05;">
 		<div class="row no-gutters">
 			<div class="col-md-11">
 				<div class="card-body ml-3">
-					<h5 class="card-title">Welcome <?= $_SESSION['level'] ?></h5>
+					<h5 class="card-title"><?= $_SESSION['level'] ?></h5>
 					<p class="card-text"><?= $_SESSION['nama_user'] ?></p>
 				</div>
 			</div>
@@ -31,14 +31,14 @@ $level = $_SESSION['level'];
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<div class="card border mb-3 shadow p-2">
+			<div class="rounded mb-3 shadow">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-money-check-alt p-3 mt-2 fa-4x"></i>
 					</div>
 					<div class="col-md-10">
-						<div class="card-body">
-							<h5 class="card-title">Today's Total Sales : <?= $date ?></h5>
+						<div class="p-4">
+							<h5 class="card-title mb-2">Today's Total Sales : <?= $date ?></h5>
 							<span class="btn btn-success btn-sm text-small"><?= $sudah['sudah_bayar'] ?> Paid</span>
 							<?php if ($level !== "Owner") : ?>
 								<span class="btn btn-danger btn-sm text-small"><?= $belum['belum_bayar'] ?> Not Paid</span>
@@ -49,14 +49,14 @@ $level = $_SESSION['level'];
 			</div>
 		</div>
 		<div class="col-md-6">
-			<div class="card border mb-3 shadow p-2">
+			<div class="rounded mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-money-bill p-3 mt-2 fa-4x"></i>
 					</div>
 					<div class="col-md-10">
-						<div class="card-body">
-							<h5 class="card-title">Today's Total Revenue : <?= $month; ?></h5>
+						<div class="p-3">
+							<h5 class="card-title mb-2">Today's Total Revenue : <?= $month; ?></h5>
 							<span class="btn btn-success btn-sm text-small">Rp. <?= rupiah($total['totbar']) ?></span>
 						</div>
 					</div>
@@ -66,14 +66,14 @@ $level = $_SESSION['level'];
 	</div>
 	<div class="row">
 		<div class="col-md-3">
-			<div class="card border mb-3 shadow p-2">
+			<div class="rounded mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-burger-soda p-3 mt-2 fa-4x"></i>
 					</div>
 					<div class="col-md-10">
-						<div class="ml-5 card-body">
-							<h6 class="card-title">Total Menu : </h6>
+						<div class="ml-5 p-4">
+							<h6 class="card-title mb-2">Total Menu : </h6>
 							<a href="index.php?dtCoffee">
 								<span class="btn btn-warning text-white btn-sm text-small"><?= $makanan['makanan'] ?> Menu</span>
 							</a>
@@ -83,14 +83,14 @@ $level = $_SESSION['level'];
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="card border mb-3 shadow p-2">
+			<div class="mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-book-user p-3 mt-2 fa-4x"></i>
 					</div>
 					<div class="col-md-10">
-						<div class="ml-4 card-body">
-							<h6 class="card-title">Total Employee :</h6>
+						<div class="ml-4 p-4">
+							<h6 class="card-title mb-2">Total Employee :</h6>
 							<span class="btn btn-secondary btn-sm text-small"><?= $kasir['kasir'] ?> Cashier</span>
 							<span class="btn btn-secondary btn-sm text-small"><?= $admin['admin'] ?> Admin</span>
 						</div>
@@ -99,14 +99,14 @@ $level = $_SESSION['level'];
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="card border mb-3 shadow p-2">
+			<div class="rounded mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-book-user p-3 mt-2 fa-4x"></i>
 					</div>
 					<div class="col-md-10">
-						<div class="ml-4 card-body">
-							<h6 class="card-title">Total Customer :</h6>
+						<div class="ml-4 p-4">
+							<h6 class="card-title mb-2">Total Customer :</h6>
 							<span class="btn btn-secondary btn-sm text-small"><?= $pelanggan['pelanggan'] ?> Customer</span>
 						</div>
 					</div>
@@ -114,14 +114,14 @@ $level = $_SESSION['level'];
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="card border mb-3 shadow p-2">
+			<div class="rounded mb-3 shadow p-2">
 				<div class="row">
 					<div class="col-md-2">
 						<i class="fa fa-book p-3 mt-2 fa-4x"></i>
 					</div>
 					<div class="col-md-10">
-						<div class="ml-4 card-body">
-							<h6 class="card-title">Report</h6>
+						<div class="ml-4 p-4">
+							<h6 class="card-title mb-2">Report</h6>
 							<a href="index.php?laporan">
 								<span class="btn btn-danger btn-sm text-small"><i class="fa fa-eye"></i> View Report</span>
 							</a>
