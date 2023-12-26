@@ -2,13 +2,13 @@
     <div class="col">
         <div class="row text-center align-items-center">
             <div class="col-sm-4 mb-3 flex-r">
-                <a href="index.php" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi shadow">COFFEE</a>
+                <a href="index.php" class="w-50 p-2 abu pter text-decoration-none text-black bo-sisi ">COFFEE</a>
             </div>
             <div class="col-sm-4 mb-3 flex-c">
                 <a href="index.php?noCoffee" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">BEVERAGE</a>
             </div>
             <div class="col-sm-4 mb-3 flex-l">
-                <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi">DESSERT</a>
+                <a href="#" class="w-50 border p-2 abu pter text-decoration-none text-black bo-sisi shadow">DESSERT</a>
             </div>
         </div>
     </div>
@@ -66,10 +66,7 @@
                             <div class="modal-dialog modal-xs bg-modal" role="document">
                                 <div class="modal-content">
                                     <div class="p-3 header-shadow flex-c">
-                                        <h5 class="modal-title text-white mr-5 mb-3" id="exampleModalLabel">Add To Cart</h5>
-                                        <button type="button" class="close text-white mb-3" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                                        <h5 class="modal-title text-white mb-3" id="exampleModalLabel">Add To Cart</h5>
                                     </div>
                                     <form action="fungsi/orderMakanan.php" method="POST">
                                         <div class="modal-body mt-2 p-4">

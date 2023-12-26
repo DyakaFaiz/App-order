@@ -66,10 +66,7 @@
               <div class="modal-dialog modal-xs bg-modal" role="document">
                 <div class="modal-content">
                   <div class="p-3 header-shadow flex-c">
-                    <h5 class="modal-title text-white mr-5 mb-3" id="exampleModalLabel">Add To Cart</h5>
-                    <button type="button" class="close text-white mb-3" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title text-white mb-3" id="exampleModalLabel">Add To Cart</h5>
                   </div>
                   <form action="fungsi/orderMakanan.php" method="POST">
                     <div class="modal-body mt-2 p-4">
