@@ -129,10 +129,7 @@ include 'fungsi/rupiah.php';
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="p-3 header-shadow flex-c">
-          <h5 class="modal-title text-white mr-5">Cart</h5>
-          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <h5 class="modal-title text-white">Cart</h5>
         </div>
         <?php
         $query_order = mysqli_query($kon, "SELECT count(id_order) as no_order FROM tb_order");
