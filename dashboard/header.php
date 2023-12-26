@@ -23,7 +23,10 @@ include 'fungsi/rupiah.php';
   <link rel="stylesheet" href="../dashboard/assets/css/custom.css">
   <link rel="stylesheet" href="assets/fontawesome-pro/css/all.min.css">
   <link rel="stylesheet" href="../auth/css/util.css">
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="/auth/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/auth/css/main.css">
+  <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
   <link rel="icon" type="image/jpg" href="/dashboard/assets/image/logoIcon.jpg" />
   <!-- <script src="https://kit.fontawesome.com/7ff23e7e04.js" crossorigin="anonymus"></script> -->
   <title>Take It!</title>
@@ -37,7 +40,7 @@ include 'fungsi/rupiah.php';
   $htm = 'text-dark';
   ?>
   <div class="container">
-    <nav class="navbar navbar-expand-md b-r-navbar p-2" style="background-color: <?= $color ?>;">
+    <nav class="navbar navbar-expand-md b-r-navbar p-2 sticky-top" style="background-color: <?= $color ?>;">
       <img src="assets/image/logo.jpg" class="wrap-pic-cir pter" alt="" width="60" height="60" class="mb-1">
       <div class="col text-right">
         <div class="row flex-r">
@@ -79,7 +82,6 @@ include 'fungsi/rupiah.php';
 
                 <?php elseif ($level == "Cashier") : ?>
                   <a class="nav-link nav-item p-2 <?= $home, $htm ?>" href="index.php">Home <span class="sr-only">(current)</span></a>
-                  <a class="nav-link nav-item p-2 <?= $us, $htm ?>" href="index.php?user">User Data</a>
                   <a class="nav-link nav-item p-2 <?= $tran, $htm ?>" href="index.php?transaksi">Input Transaction <span class="sr-only">(current)</span></a>
                   <a class="nav-link nav-item p-2 <?= $lap, $htm ?>" href="index.php?laporan">Report <span class="sr-only">(current)</span></a>
 

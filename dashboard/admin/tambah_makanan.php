@@ -11,7 +11,7 @@
 							<label class="form-label" for="kategori_masakan">Category Menu</label>
 							<select name="kategori_masakan" id="kategori_masakan" class="form-control">
 								<option value="Coffee">Coffee</option>
-								<option value="NoCoffee">No Coffee</option>
+								<option value="NoCoffee">Beverage</option>
 								<option value="Dessert">Dessert</option>
 							</select>
 						</div>

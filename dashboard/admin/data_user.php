@@ -18,7 +18,9 @@
 							<th>No</th>
 							<th>Full Name</th>
 							<th>Username</th>
-							<th>Password</th>
+							<?php if ($_SESSION['level'] == "Admin") : ?>
+								<th>Password</th>
+							<?php endif ?>
 							<th>Level</th>
 							<?php if ($_SESSION['level'] == "Admin") : ?>
 								<th>Action</th>
@@ -42,14 +44,16 @@
 								<td><?= $i++; ?></td>
 								<td><?= $data['nama_user'] ?></td>
 								<td><?= $data['username'] ?></td>
-								<td>
-									<div class="wrap-input100">
-										<span class="btn-show-pass">
-											<i class="zmdi zmdi-eye"></i>
-										</span>
-										<input class="input100" type="<?= $tp ?>" name="password" value="<?= $data['password'] ?>" disabled>
-									</div>
-								</td>
+								<?php if ($_SESSION['level'] == "Admin") : ?>
+									<td>
+										<div class="wrap-input100">
+											<span class="btn-show-pass">
+												<i class="zmdi zmdi-eye"></i>
+											</span>
+											<input class="input100" type="<?= $tp ?>" name="password" value="<?= $data['password'] ?>" disabled>
+										</div>
+									</td>
+								<?php endif ?>
 								<?php
 								if ($data['id_level'] == 1) {
 									$level = "Owner";

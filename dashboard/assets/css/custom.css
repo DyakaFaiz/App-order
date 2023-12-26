@@ -3,11 +3,17 @@
   src: url("../fonts/poppins/Poppins-Regular.ttf");
 }
 
+@font-face {
+  font-family: Poppins-Bold;
+  src: url("../fonts/poppins/Poppins-Bold.ttf");
+}
+
 body {
-  font-family: Helvetica;
+  font-family: Poppins-Bold;
   font-size: 0.875rem;
   background-color: #fff;
   color: #333;
+  box-sizing: border-box;
 }
 
 .feather {

@@ -1,11 +1,11 @@
 <div class="container p-2">
-	<?php if (isset($_SESSION['pesan'])) : ?>
-		<?= $_SESSION['pesan'] ?>
-	<?php unset($_SESSION['pesan']);
-	endif; ?>
 	<div class="row flex-c">
 		<div class="col-md-11 p-3">
 
+			<?php if (isset($_SESSION['pesan'])) : ?>
+				<?= $_SESSION['pesan'] ?>
+			<?php unset($_SESSION['pesan']);
+			endif; ?>
 			<div class="p-4 font-weight-bold shadow-sm rounded">
 				BEVERAGE
 			</div>

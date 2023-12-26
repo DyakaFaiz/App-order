@@ -46,7 +46,7 @@ $hartot = mysqli_fetch_assoc($q_hartot);
             Member : <?= $struk['id_user'] == 0 ? 'Tidak' : $mem['nama_user'] ?>
           </div>
           <div class="col-md-6">
-            Cashier : <?= $_SESSION['nama_user'] ?>
+            Cashier : <?= $struk['nama_kasir'] ?>
           </div>
         </div>
         <hr>
