@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2023 at 08:49 AM
+-- Generation Time: Dec 27, 2023 at 02:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -87,19 +87,20 @@ INSERT INTO `tb_masakan` (`id_masakan`, `kategori_masakan`, `nama_masakan`, `har
 (40, 'NoCoffee', 'Blue Mojito', 20000, '02122023211207blue mojito.jpg', 1),
 (41, 'NoCoffee', 'Peach Tea', 20000, '02122023211239peach tea.jpg', 1),
 (42, 'NoCoffee', 'Blueberry Mojito', 20000, '02122023211413blueberry mojito.jpg', 1),
-(43, 'NoCoffee', 'caramel ice cream', 20000, '02122023212050caramel ice cream.jpg', 1),
-(44, 'NoCoffee', 'Ice Matcha Latte', 20000, '02122023212116Ice Matcha Latte.jpg', 1),
-(45, 'NoCoffee', 'Sweet Bingsoo', 20000, '02122023212231Sweet Bingsoo.jpg', 1),
 (46, 'Coffee', 'Ice Americano', 20000, '03122023201109ice americano.jpg', 1),
 (47, 'Coffee', 'caramel machiato', 20000, '03122023201600caramel machiato.jpg', 0),
 (48, 'Coffee', 'choco coffee', 20000, '03122023201613choco coffee.jpg', 1),
 (49, 'Coffee', 'Dalgona Coffee', 20000, '03122023201625Dalgona Coffee.jpg', 1),
 (50, 'Coffee', 'espresso', 20000, '03122023201816espresso.jpg', 1),
-(51, 'Coffee', 'Milk Coffee ', 20000, '03122023201831Milk Coffee .jpg', 1),
 (52, 'Dessert', 'Croffle', 20000, '03122023202112Croffle.jpg', 1),
 (53, 'Dessert', 'glaze donuts', 20000, '03122023202128glaze donuts.jpg', 1),
 (54, 'Dessert', 'macarons', 20000, '03122023202143macarons.jpg', 1),
-(55, 'Dessert', 'rasberry choux', 20000, '03122023202202rasberry choux.jpg', 1);
+(55, 'Dessert', 'rasberry choux', 20000, '03122023202202rasberry choux.jpg', 1),
+(58, 'Dessert', 'Strawberry Cake', 20000, '26122023215940Strawberry Cake.jpg', 1),
+(59, 'Coffee', 'milk coffee', 21000, '26122023220007Milk Coffee .jpg', 1),
+(60, 'Coffee', 'vanilla late', 25400, '26122023220208vanila latte.jpg', 1),
+(61, 'NoCoffee', 'Ice Matcha Latte', 21500, '26122023220444Ice Matcha Latte.jpg', 1),
+(62, 'NoCoffee', 'Sweet Bingsoo', 24000, '26122023220611Sweet Bingsoo.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -163,6 +164,14 @@ CREATE TABLE `tb_transaksi` (
   `uang_transaksi` int(11) NOT NULL,
   `kembalian_transaksi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tb_transaksi`
+--
+
+INSERT INTO `tb_transaksi` (`id_transaksi`, `id_user`, `nama_kasir`, `id_order`, `tanggal_transaksi`, `aTanggal_transaksi`, `hartot_transaksi`, `diskon_transaksi`, `totbar_transaksi`, `uang_transaksi`, `kembalian_transaksi`) VALUES
+(45, 0, 'Nabila', '', 1703684028, '27-12-2023', 0, 0, 0, 1, 1),
+(46, 0, 'Nabila', '', 1703684033, '27-12-2023', 0, 1, 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -243,7 +252,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_detail_order`
 --
 ALTER TABLE `tb_detail_order`
-  MODIFY `id_dorder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id_dorder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `tb_level`
@@ -255,7 +264,7 @@ ALTER TABLE `tb_level`
 -- AUTO_INCREMENT for table `tb_masakan`
 --
 ALTER TABLE `tb_masakan`
-  MODIFY `id_masakan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_masakan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `tb_meja`
@@ -267,7 +276,7 @@ ALTER TABLE `tb_meja`
 -- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
